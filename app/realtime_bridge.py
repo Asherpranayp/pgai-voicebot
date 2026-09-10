@@ -6,7 +6,8 @@ simulated patient's speech AND transcribes the agent's speech.
 Why this shape, in short (see ARCHITECTURE.md for the full reasoning):
 - Twilio's Media Streams protocol sends/receives base64-encoded mu-law audio
   over a plain WebSocket. OpenAI Realtime supports mu-law natively
-  (`g711_ulaw`), so audio is relayed byte-for-byte with zero transcoding.
+  (`audio/pcmu`, the GA name for G.711 mu-law), so audio is relayed
+  byte-for-byte with zero transcoding.
 - The agent's speech is treated as the Realtime session's "user" input; the
   model's spoken replies (our simulated patient) are the "assistant" output.
   Server-side voice activity detection (VAD) decides when a turn ends and
@@ -15,6 +16,16 @@ Why this shape, in short (see ARCHITECTURE.md for the full reasoning):
 - Both sides of the conversation are transcribed as they happen
   (Whisper for the agent's audio, the Realtime model's own transcript for its
   own speech) and written out incrementally to a CallTranscript.
+
+NOTE on API version: OpenAI's Realtime API went GA in 2026 and the old beta
+websocket shape (the `OpenAI-Beta: realtime=v1` header, top-level
+`input_audio_format`/`voice`/`turn_detection` fields, and events like
+`response.audio.delta`) was retired. This module targets the GA shape:
+audio config nested under `session.audio.input` / `session.audio.output`,
+and renamed events (`response.output_audio.delta`, etc). Any server event
+type we don't explicitly recognize is logged rather than silently ignored,
+so if OpenAI renames something else later this module fails loudly in the
+logs instead of just going silent.
 """
 import asyncio
 import base64
@@ -30,7 +41,26 @@ from app.transcript_store import CallTranscript
 
 log = logging.getLogger("realtime_bridge")
 
-OPENAI_WS_URL = f"wss://api.openai.com/v1/realtime?model={OPENAI_REALTIME_MODEL}"
+OPENAI_WS_URL = "wss://api.openai.com/v1/realtime"
+
+# Server event types we actively handle. Anything else that arrives gets
+# logged at INFO so a future API change shows up in the logs immediately
+# instead of silently doing nothing.
+_HANDLED_EVENTS = {
+    "response.output_audio.delta",
+    "response.output_audio_transcript.delta",
+    "response.output_audio_transcript.done",
+    "conversation.item.input_audio_transcription.completed",
+    "conversation.item.input_audio_transcription.delta",
+    "input_audio_buffer.speech_started",
+    "input_audio_buffer.speech_stopped",
+    "input_audio_buffer.committed",
+    "session.created",
+    "session.updated",
+    "response.created",
+    "response.done",
+    "error",
+}
 
 
 async def run_bridge(twilio_ws: WebSocket, scenario_id: str):
@@ -44,24 +74,30 @@ async def run_bridge(twilio_ws: WebSocket, scenario_id: str):
 
     headers = {
         "Authorization": f"Bearer {OPENAI_API_KEY}",
-        "OpenAI-Beta": "realtime=v1",
     }
 
     async with websockets.connect(OPENAI_WS_URL, additional_headers=headers, max_size=None) as openai_ws:
         await openai_ws.send(json.dumps({
             "type": "session.update",
             "session": {
-                "modalities": ["audio", "text"],
+                "type": "realtime",
+                "model": OPENAI_REALTIME_MODEL,
                 "instructions": scenario.system_prompt,
-                "voice": OPENAI_VOICE,
-                "input_audio_format": "g711_ulaw",
-                "output_audio_format": "g711_ulaw",
-                "input_audio_transcription": {"model": "whisper-1"},
-                "turn_detection": {
-                    "type": "server_vad",
-                    "threshold": 0.5,
-                    "prefix_padding_ms": 300,
-                    "silence_duration_ms": 500,
+                "audio": {
+                    "input": {
+                        "format": "audio/pcmu",
+                        "transcription": {"model": "whisper-1"},
+                        "turn_detection": {
+                            "type": "server_vad",
+                            "threshold": 0.5,
+                            "prefix_padding_ms": 300,
+                            "silence_duration_ms": 500,
+                        },
+                    },
+                    "output": {
+                        "format": "audio/pcmu",
+                        "voice": OPENAI_VOICE,
+                    },
                 },
             },
         }))
@@ -106,17 +142,17 @@ async def run_bridge(twilio_ws: WebSocket, scenario_id: str):
                     event = json.loads(raw)
                     etype = event.get("type")
 
-                    if etype == "response.audio.delta" and stream_sid:
+                    if etype == "response.output_audio.delta" and stream_sid:
                         await twilio_ws.send_text(json.dumps({
                             "event": "media",
                             "streamSid": stream_sid,
                             "media": {"payload": event["delta"]},
                         }))
 
-                    elif etype == "response.audio_transcript.delta":
+                    elif etype == "response.output_audio_transcript.delta":
                         patient_partial += event.get("delta", "")
 
-                    elif etype == "response.audio_transcript.done":
+                    elif etype == "response.output_audio_transcript.done":
                         if transcript and patient_partial.strip():
                             transcript.add("patient", patient_partial)
                         patient_partial = ""
@@ -138,8 +174,15 @@ async def run_bridge(twilio_ws: WebSocket, scenario_id: str):
                     elif etype == "error":
                         log.error("OpenAI Realtime error: %s", event)
 
-            except websockets.exceptions.ConnectionClosed:
-                log.info("OpenAI websocket closed")
+                    elif etype not in _HANDLED_EVENTS:
+                        # Not fatal — just something we don't act on. Logged so an API
+                        # change (renamed/new event) is visible instead of silent.
+                        log.info("Unhandled OpenAI event type: %s", etype)
+
+            except websockets.exceptions.ConnectionClosed as e:
+                log.info("OpenAI websocket closed: %s", e)
+            except Exception:
+                log.exception("Error in openai_to_twilio loop")
             finally:
                 if transcript:
                     json_path, txt_path = transcript.save()
