@@ -1,0 +1,142 @@
+{
+  "call_id": "CA8b1b30c5be03d428b93901aa49d28537",
+  "scenario_id": "insurance_question",
+  "started_at": 1789613538.9375896,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 4.63
+    },
+    {
+      "role": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2.",
+      "t": 7.58
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?",
+      "t": 13.26
+    },
+    {
+      "role": "patient",
+      "text": "Hi, yeah, I wanted to find out if you accept my insurance and what the cost might be if you don\u2019t.",
+      "t": 13.85
+    },
+    {
+      "role": "agent",
+      "text": "Could I please have your full name and date of birth?",
+      "t": 24.65
+    },
+    {
+      "role": "patient",
+      "text": "Sure, my name\u2019s Asher Pranay Palle, and my date of birth is February 16, 1995.",
+      "t": 25.52
+    },
+    {
+      "role": "agent",
+      "text": "Just to confirm, I have your name as Asher Pauly.",
+      "t": 39.74
+    },
+    {
+      "role": "agent",
+      "text": "and your date of birth as February 16, 1995. Is that correct? If so, please spell your first and last name for me.",
+      "t": 47.55
+    },
+    {
+      "role": "patient",
+      "text": "Sure, it\u2019s Asher, A-S-H-E-R, and my last name is Palle, P-A-L-L-E.",
+      "t": 48.46
+    },
+    {
+      "role": "agent",
+      "text": "Thank you. Asher. I have you as Asher Pernai-Pauley. How can I help with your insurance question?",
+      "t": 69.64
+    },
+    {
+      "role": "patient",
+      "text": "I'm trying to check if a specific plan is accepted. It's Blue Cross Blue Shield PPO.",
+      "t": 74.55
+    },
+    {
+      "role": "agent",
+      "text": "Are you looking to update your insurance information or check if a specific plan is accepted?",
+      "t": 75.41
+    },
+    {
+      "role": "patient",
+      "text": "Yeah, it\u2019s Blue Cross Blue Shield PPO.",
+      "t": 85.1
+    },
+    {
+      "role": "agent",
+      "text": "Please tell me the name of your insurance company and the plan you want to check.",
+      "t": 85.27
+    },
+    {
+      "role": "patient",
+      "text": "It\u2019s issued in California.",
+      "t": 95.05
+    },
+    {
+      "role": "agent",
+      "text": "What state is your Blue Cross Blue Shield PPO plan issued in?",
+      "t": 95.32
+    },
+    {
+      "role": "agent",
+      "text": "Could you give me your member ID number from your insurance card?",
+      "t": 103.08
+    },
+    {
+      "role": "patient",
+      "text": "I don\u2019t have it in front of me right now. Can you tell me if you generally accept that type of plan?",
+      "t": 104.0
+    },
+    {
+      "role": "agent",
+      "text": "I need your member ID to check if your specific Blue Cross Blue Shield PPO plan from California is accepted. Coverage can vary by plan, even within the same company. If you can get your card, I can look it up for you.",
+      "t": 123.91
+    },
+    {
+      "role": "patient",
+      "text": "I really just want a ballpark. If you don\u2019t take it, what\u2019s a typical visit cost out-of-pocket?",
+      "t": 128.12
+    },
+    {
+      "role": "agent",
+      "text": "Would you like to continue later or is there anything else I can help with?",
+      "t": 128.27
+    },
+    {
+      "role": "agent",
+      "text": "Out-of-pocket costs can vary depending on the type of visit and services needed.",
+      "t": 139.91
+    },
+    {
+      "role": "agent",
+      "text": "For a standard office visit, the fee is usually between $100 and $200. Procedures or imaging may cost more. If you want an exact estimate, I can connect you with our billing team. Would you like me to do that?",
+      "t": 152.89
+    },
+    {
+      "role": "patient",
+      "text": "Thanks, that range helps a lot. I think I\u2019ve got what I need. Appreciate your help. Take care.",
+      "t": 153.35
+    },
+    {
+      "role": "agent",
+      "text": "You're welcome.",
+      "t": 161.68
+    },
+    {
+      "role": "agent",
+      "text": "If you have more questions later, just give us a call. Take care.",
+      "t": 164.79
+    },
+    {
+      "role": "patient",
+      "text": "Will do. Thanks again. Bye.",
+      "t": 165.54
+    }
+  ]
+}
