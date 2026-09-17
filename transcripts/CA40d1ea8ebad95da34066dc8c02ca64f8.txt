@@ -1,0 +1,18 @@
+Call: CA40d1ea8ebad95da34066dc8c02ca64f8  Scenario: cancel_appointment
+
+[00:05] AGENT  : This call may be recorded for quality and training purposes.
+[00:06] AGENT  : Para Español, oprima el 2.
+[00:12] AGENT  : Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:13] PATIENT: Hi, yeah, I need some help with an appointment I have scheduled. Can you assist me with that?
+[00:23] AGENT  : Can I have your full name and date of birth?
+[00:24] PATIENT: Sure, my name’s Asher Pranay Palle, and my date of birth is February 16, 1995.
+[00:45] AGENT  : Just to confirm, I have your name as Asher Pauly and your date of birth as February 16th, 1995. Is that correct? If so, please spell your first and last name for me.
+[00:46] PATIENT: Sure, let me spell it out. First name: A-S-H-E-R. Last name: P-A-L-L-E.
+[01:07] AGENT  : Thanks, Asher. How can I help with your appointment? Do you want to confirm, reschedule, or cancel it?
+[01:08] PATIENT: I actually need to cancel it completely, I’m feeling better and don’t need it anymore.
+[01:21] AGENT  : You have an appointment with Judy Hauser on Thursday, September 17th. Is this the one you want to cancel?
+[01:21] PATIENT: Yeah, that sounds right. I’d like to go ahead and cancel that appointment completely.
+[01:36] AGENT  : Your appointment with Sugi Hauser on Thursday, September 17th, has been cancelled. Is there anything else I can help you with today?
+[01:36] PATIENT: Nope, that takes care of it. Thanks for your help. You have a good one.
+[01:45] AGENT  : You're all set! Have a great day!
+[01:46] PATIENT: Thanks, you too. Take care, bye.

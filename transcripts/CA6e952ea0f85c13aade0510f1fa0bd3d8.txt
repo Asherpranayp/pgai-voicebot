@@ -1,0 +1,18 @@
+Call: CA6e952ea0f85c13aade0510f1fa0bd3d8  Scenario: cancel_appointment
+
+[00:05] AGENT  : This call may be recorded for quality and training purposes.
+[00:07] AGENT  : Para Español, oprima el 2.
+[00:14] PATIENT: Hi, yeah, I’ve got an appointment coming up and I need to cancel it.
+[00:14] AGENT  : Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:25] PATIENT: Yeah, that's me, Asher Pranay Palle.
+[00:26] AGENT  : I see you're calling from the number we have on file. Am I speaking with Azure?
+[00:32] AGENT  : Please provide your date of birth.
+[00:32] PATIENT: Sure, it's February 16, 1995.
+[00:57] PATIENT: Yeah, that’s the one. I'm actually feeling a lot better now, so I don’t think I need it anymore.
+[00:57] AGENT  : You have an appointment scheduled for Thursday, September 17th with ABRKR. Is this the one you want to cancel? If so, can you share the reason for canceling?
+[01:11] PATIENT: Yes, that’s correct. I want to go ahead and cancel it completely.
+[01:12] AGENT  : Just to confirm, you want to cancel your appointment on Thursday, September 17th with ABRQR, is that correct?
+[01:25] PATIENT: No, that covers it. Thanks for your help.
+[01:26] AGENT  : Your appointment on Thursday, September 17th with Baberker has been cancelled. Is there anything else I can help you with today?
+[01:32] PATIENT: Thanks, you too. Take care.
+[01:33] AGENT  : You're all set. Have a great day.

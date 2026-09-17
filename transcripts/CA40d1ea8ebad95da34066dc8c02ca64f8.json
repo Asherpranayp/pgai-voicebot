@@ -1,0 +1,87 @@
+{
+  "call_id": "CA40d1ea8ebad95da34066dc8c02ca64f8",
+  "scenario_id": "cancel_appointment",
+  "started_at": 1789611187.3057365,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 5.13
+    },
+    {
+      "role": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2.",
+      "t": 6.83
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?",
+      "t": 12.86
+    },
+    {
+      "role": "patient",
+      "text": "Hi, yeah, I need some help with an appointment I have scheduled. Can you assist me with that?",
+      "t": 13.65
+    },
+    {
+      "role": "agent",
+      "text": "Can I have your full name and date of birth?",
+      "t": 23.02
+    },
+    {
+      "role": "patient",
+      "text": "Sure, my name\u2019s Asher Pranay Palle, and my date of birth is February 16, 1995.",
+      "t": 24.33
+    },
+    {
+      "role": "agent",
+      "text": "Just to confirm, I have your name as Asher Pauly and your date of birth as February 16th, 1995. Is that correct? If so, please spell your first and last name for me.",
+      "t": 45.42
+    },
+    {
+      "role": "patient",
+      "text": "Sure, let me spell it out. First name: A-S-H-E-R. Last name: P-A-L-L-E.",
+      "t": 46.41
+    },
+    {
+      "role": "agent",
+      "text": "Thanks, Asher. How can I help with your appointment? Do you want to confirm, reschedule, or cancel it?",
+      "t": 67.74
+    },
+    {
+      "role": "patient",
+      "text": "I actually need to cancel it completely, I\u2019m feeling better and don\u2019t need it anymore.",
+      "t": 68.15
+    },
+    {
+      "role": "agent",
+      "text": "You have an appointment with Judy Hauser on Thursday, September 17th. Is this the one you want to cancel?",
+      "t": 81.4
+    },
+    {
+      "role": "patient",
+      "text": "Yeah, that sounds right. I\u2019d like to go ahead and cancel that appointment completely.",
+      "t": 81.73
+    },
+    {
+      "role": "agent",
+      "text": "Your appointment with Sugi Hauser on Thursday, September 17th, has been cancelled. Is there anything else I can help you with today?",
+      "t": 96.33
+    },
+    {
+      "role": "patient",
+      "text": "Nope, that takes care of it. Thanks for your help. You have a good one.",
+      "t": 96.81
+    },
+    {
+      "role": "agent",
+      "text": "You're all set! Have a great day!",
+      "t": 105.61
+    },
+    {
+      "role": "patient",
+      "text": "Thanks, you too. Take care, bye.",
+      "t": 106.25
+    }
+  ]
+}
