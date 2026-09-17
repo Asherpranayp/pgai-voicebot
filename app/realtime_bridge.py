@@ -41,7 +41,7 @@ from app.transcript_store import CallTranscript
 
 log = logging.getLogger("realtime_bridge")
 
-OPENAI_WS_URL = "wss://api.openai.com/v1/realtime"
+OPENAI_WS_URL = f"wss://api.openai.com/v1/realtime?model={OPENAI_REALTIME_MODEL}"
 
 # Server event types we actively handle. Anything else that arrives gets
 # logged at INFO so a future API change shows up in the logs immediately
@@ -81,7 +81,6 @@ async def run_bridge(twilio_ws: WebSocket, scenario_id: str):
             "type": "session.update",
             "session": {
                 "type": "realtime",
-                "model": OPENAI_REALTIME_MODEL,
                 "instructions": scenario.system_prompt,
                 "audio": {
                     "input": {
