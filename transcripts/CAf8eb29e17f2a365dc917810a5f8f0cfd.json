@@ -1,0 +1,122 @@
+{
+  "call_id": "CAf8eb29e17f2a365dc917810a5f8f0cfd",
+  "scenario_id": "scheduling_specific_doctor",
+  "started_at": 1789609990.5849977,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 5.36
+    },
+    {
+      "role": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2.",
+      "t": 7.16
+    },
+    {
+      "role": "patient",
+      "text": "Hey, yeah, I\u2019m trying to book a follow-up appointment with Dr. Whitfield. Can you help me out with that?",
+      "t": 14.38
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?",
+      "t": 14.51
+    },
+    {
+      "role": "agent",
+      "text": "I see you're calling from the number we have on file. Am I speaking with Azure?",
+      "t": 26.08
+    },
+    {
+      "role": "patient",
+      "text": "Yeah, this is Asher speaking.",
+      "t": 26.18
+    },
+    {
+      "role": "agent",
+      "text": "Please provide your date of birth.",
+      "t": 32.4
+    },
+    {
+      "role": "patient",
+      "text": "Sure, my date of birth is February 16, 1995.",
+      "t": 33.39
+    },
+    {
+      "role": "agent",
+      "text": "You mentioned wanting a follow-up appointment with Dr. Whitfield. Is this for a follow-up after a recent visit or procedure?",
+      "t": 49.73
+    },
+    {
+      "role": "patient",
+      "text": "Yeah, it's a follow-up after my last visit.",
+      "t": 50.64
+    },
+    {
+      "role": "agent",
+      "text": "There are several openings for follow-up visits starting this Thursday, September 17, with Dr. Judy Houser, Carl Mentz, P.T., and Kelly Noble, M.D. Do you have a preferred provider or time of day?",
+      "t": 73.52
+    },
+    {
+      "role": "patient",
+      "text": "Actually, I was hoping to see Dr. Whitfield. Are you sure Dr. Whitfield isn\u2019t available?",
+      "t": 74.22
+    },
+    {
+      "role": "patient",
+      "text": "Could you double-check if Dr. Whitfield is even part of the clinic? I just want to make sure I\u2019ve got the right place.",
+      "t": 92.9
+    },
+    {
+      "role": "agent",
+      "text": "I did not see any openings listed for Dr. Whitfield in the current schedule. Would you like to book with one of the available providers or should I check other dates for Dr. Whitfield?",
+      "t": 93.04
+    },
+    {
+      "role": "agent",
+      "text": "Let me...",
+      "t": 99.11
+    },
+    {
+      "role": "patient",
+      "text": "All right, I\u2019ll hang tight. Let me know what you find out.",
+      "t": 99.5
+    },
+    {
+      "role": "agent",
+      "text": "I checked the current provider list and available appointments, but I do not see Dr. Whitfield listed with Pivot Point Orthopedics. The providers available for follow-up visits are Dr. Duvy Howser, Carl Mentz, PT, and Kelly Noble, MD. Would you like to book with one of these providers? Or should I note your request for a follow-up from the office about Dr. Whitfield?",
+      "t": 129.56
+    },
+    {
+      "role": "patient",
+      "text": "Hmm, could you note my request for a follow-up about Dr. Whitfield? That\u2019d be really helpful.",
+      "t": 130.15
+    },
+    {
+      "role": "agent",
+      "text": "I've documented your request for the clinic to follow up about Dr. Whitfield's availability. The team will get back to you as soon as they can.",
+      "t": 152.5
+    },
+    {
+      "role": "patient",
+      "text": "No, that covers it for now. Thanks a lot for your help.",
+      "t": 155.18
+    },
+    {
+      "role": "agent",
+      "text": "Is there anything else I can help you with today?",
+      "t": 155.31
+    },
+    {
+      "role": "agent",
+      "text": "You're welcome. Have a great day.",
+      "t": 163.17
+    },
+    {
+      "role": "patient",
+      "text": "You too, take care.",
+      "t": 163.45
+    }
+  ]
+}
