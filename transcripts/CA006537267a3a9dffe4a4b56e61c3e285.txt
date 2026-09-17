@@ -1,0 +1,35 @@
+Call: CA006537267a3a9dffe4a4b56e61c3e285  Scenario: simple_scheduling
+
+[00:04] AGENT  : This call may be recorded for quality and training purposes.
+[00:06] PATIENT: Hi, yeah, I’ll stick with English. I’d like to schedule an appointment.
+[00:06] AGENT  : Para Español, oprima el 2.
+[00:07] AGENT  : Yep.
+[00:08] PATIENT: Sure, I can help with that. Could you tell me your full name, please?
+[00:19] AGENT  : Would you like to create a demo patient profile? I just need your first and last name.
+[00:20] PATIENT: Oh, sure thing. My first name’s Asher, and my last name is Palle.
+[00:40] AGENT  : Your patient profile is set up and your date of birth is July 4, 2000 for demo purposes. How may I help you today?
+[00:42] PATIENT: Actually, my date of birth is February 16, 1995. I'm calling because I've got some knee pain and I need to book an appointment as a new patient.
+[01:04] AGENT  : Thanks for sharing that. Since you mentioned knee pain and that you're a new patient, would you like to book an initial consultation to establish care? This is usually the first step for new patients.
+[01:05] PATIENT: Yeah, that sounds good. I'd like to set that up as soon as possible, preferably in the morning.
+[01:29] PATIENT: That 9 a.m. slot on Thursday sounds perfect. Let’s go with that.
+[01:30] AGENT  : Let me check the soonest available morning appointments for a new patient consultation. There are morning openings this Thursday, September 17th, with ABRCR at 9 a.m., 9.45 a.m., and 10.30 a.m. Would you like to book the 9 a.m. slot?
+[01:40] AGENT  : Booking your appointment now for Thursday at 9 a.m. with ABRCR. One moment.
+[01:41] PATIENT: Great, thanks. Let me know if you need anything else from me.
+[01:42] AGENT  : Europe
+[01:43] PATIENT: Actually, I do have a quick question. How long does that initial consultation usually take?
+[01:58] PATIENT: Got it, 45 minutes sounds good. Thanks for confirming that.
+[01:58] AGENT  : The initial consultation is scheduled for about 45 minutes. If you have more questions about the visit, just let me know.
+[02:11] AGENT  : You're all set for Thursday at 9 a.m. with Dr. Bricker. If you'd like a text with your appointment details, just let me know.
+[02:12] PATIENT: Thanks, that would be helpful. Could you send that text reminder to me?
+[02:25] AGENT  : I've already sent the appointment details to your phone ending in 5133. Let me know if you need anything else.
+[02:26] PATIENT: Actually, my number ends in 7-8-2-1. Could you double-check that and resend it to the correct number?
+[02:46] PATIENT: Yeah, that’s not right. Please update it to 920-555-7821.
+[02:46] AGENT  : I have your number as 920-551-5133. Is that correct, or should I update it to a different number?
+[03:02] PATIENT: Yes, that's correct. Thanks for updating that.
+[03:03] AGENT  : I have your number as 920-555-7821, is that correct?
+[03:14] PATIENT: I think that covers it for now. Thanks a lot for your help. I'll see you at the appointment.
+[03:14] AGENT  : No problem. If you have any more questions or need help with anything else, just let me know.
+[03:24] PATIENT: Perfect, thanks again. Take care, bye.
+[03:24] AGENT  : You're all set. See you Thursday at 9 a.m.
+[03:31] PATIENT: Bye now.
+[03:32] AGENT  : Take care. Goodbye.
