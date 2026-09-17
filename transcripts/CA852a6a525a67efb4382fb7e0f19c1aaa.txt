@@ -1,0 +1,29 @@
+Call: CA852a6a525a67efb4382fb7e0f19c1aaa  Scenario: office_hours_location
+
+[00:05] AGENT  : This call may be recorded for quality and training purposes.
+[00:06] PATIENT: Lo siento, pero en este
+[00:07] AGENT  : Para Español, oprima el 2.
+[00:14] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI? How may I help you today?
+[00:14] PATIENT: Hey, yeah, I’m just trying to get a bit of info. Could you tell me what days and hours the clinic is open, and maybe the address?
+[00:38] AGENT  : Edit Point Orthopedics is open Monday through Friday. Our hours are 9am to 4pm on Monday, Tuesday, and Thursday, 12pm to 7pm on Wednesday.
+[00:41] AGENT  : 9 a.m. to 12 p.m. on Friday.
+[00:47] AGENT  : The clinic is located at 1234 Recovery Way, Suite 200, Austin.
+[00:48] AGENT  : Is there anything else you'd like to know?
+[00:50] PATIENT: Got it, thanks. Just to make sure I heard you right—so Monday, Tuesday, Thursday it’s 9 to 4, Wednesday noon to 7, and Friday 9 to noon?
+[01:07] AGENT  : That's correct. Monday, Tuesday, and Thursday from 9 a.m. to 4 p.m.
+[01:09] AGENT  : Wednesday from 12 p.m. to 7 p.m.
+[01:14] AGENT  : Friday from 9 a.m. to 12 p.m.
+[01:16] PATIENT: Alright, that clears things up. And you mentioned the address is 1234 Recovery Way, Suite 200 in Austin. That’s all correct, right?
+[01:16] AGENT  : Let me know if you need anything else.
+[01:33] AGENT  : Yes, that's right. The address is 1-2-3-4, Recovery Way, Suite 200, Austin.
+[01:35] AGENT  : If you have any other questions, just let me know.
+[01:36] PATIENT: Alright, that’s super helpful. Let me think if I have anything else.
+[01:46] AGENT  : Take your time. I'm here if you need anything else.
+[01:46] PATIENT: Actually, one more question. Do you happen to have any weekend hours, or is it just Monday to Friday?
+[01:58] AGENT  : We're only open Monday through Friday. The clinic is closed on weekends.
+[01:58] PATIENT: Got it, no weekends. That’s good to know. Thanks for clearing that up.
+[02:06] AGENT  : You're welcome.
+[02:09] PATIENT: I think that covers what I needed for now. Thanks a lot for your help. Take care.
+[02:09] AGENT  : If you have any more questions, feel free to ask.
+[02:19] AGENT  : Glad I could help. Have a great day.
+[02:19] PATIENT: You too, take care, bye.
