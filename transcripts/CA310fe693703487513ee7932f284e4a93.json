@@ -1,0 +1,172 @@
+{
+  "call_id": "CA310fe693703487513ee7932f284e4a93",
+  "scenario_id": "weekend_request_edge_case",
+  "started_at": 1789614108.4004824,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 5.18
+    },
+    {
+      "role": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2.",
+      "t": 7.67
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?",
+      "t": 14.0
+    },
+    {
+      "role": "patient",
+      "text": "Hi, yeah, I\u2019m hoping to set up an appointment for this Sunday at 10 a.m. I\u2019ve been having some knee pain.",
+      "t": 14.26
+    },
+    {
+      "role": "agent",
+      "text": "Can I have your full name and date of birth?",
+      "t": 25.36
+    },
+    {
+      "role": "patient",
+      "text": "Sure, it\u2019s Asher Pranay Palle, and my date of birth is February 16, 1995.",
+      "t": 25.71
+    },
+    {
+      "role": "agent",
+      "text": "Just to confirm, I have your name as Asher Pauly and your date of birth as February 16th, 1995. Is that correct? If not, could you please spell your first and last name for me?",
+      "t": 47.47
+    },
+    {
+      "role": "patient",
+      "text": "Sure, I can spell that out. First name: A-S-H-E-R. Last name: P-R-A-N-A-Y, and then P-A-L-L-E.",
+      "t": 48.78
+    },
+    {
+      "role": "agent",
+      "text": "Thanks. Asher, I have you confirmed.",
+      "t": 66.27
+    },
+    {
+      "role": "agent",
+      "text": "I'll look for the next available appointment.",
+      "t": 69.21
+    },
+    {
+      "role": "agent",
+      "text": "Please note, the clinic is closed on Sundays.",
+      "t": 72.22
+    },
+    {
+      "role": "agent",
+      "text": "Would you like to see what's open on another day or do you have a preferred time or provider?",
+      "t": 75.44
+    },
+    {
+      "role": "patient",
+      "text": "Oh, I didn\u2019t realize that. Well, can you tell me what\u2019s the soonest available morning appointment then?",
+      "t": 76.49
+    },
+    {
+      "role": "agent",
+      "text": "before I check the schedule.",
+      "t": 86.52
+    },
+    {
+      "role": "agent",
+      "text": "Can you tell me a bit more about your pain? Is this a new issue or are you following up on a previous visit?",
+      "t": 93.47
+    },
+    {
+      "role": "agent",
+      "text": "This helps me book the right type of appointment for you.",
+      "t": 95.03
+    },
+    {
+      "role": "patient",
+      "text": "Yeah, it\u2019s a new issue. My knee started bothering me a few days ago, and it\u2019s gotten worse, so I wanted to have it checked out as soon as possible.",
+      "t": 95.91
+    },
+    {
+      "role": "agent",
+      "text": "There are no open appointments available through next Wednesday. Would you like me to check for later dates? Or are you open to seeing any provider if something opens up sooner?",
+      "t": 115.39
+    },
+    {
+      "role": "patient",
+      "text": "I\u2019m open to any provider, and I\u2019d really like something as soon as possible. Could you check the next available morning slot after Wednesday?",
+      "t": 116.74
+    },
+    {
+      "role": "agent",
+      "text": "The soonest morning appointment after next Wednesday is Thursday, September 17th. The earliest slot is at 8.15 a.m. with Dr. Zygmunt Lukoski. Would you like to book that time?",
+      "t": 137.94
+    },
+    {
+      "role": "patient",
+      "text": "Yeah, that sounds good. Let\u2019s go ahead and book that 8:15 a.m. on Thursday.",
+      "t": 138.44
+    },
+    {
+      "role": "patient",
+      "text": "All right, thanks. I\u2019ll wait for that confirmation.",
+      "t": 155.55
+    },
+    {
+      "role": "agent",
+      "text": "Your appointment for Thursday, September 17th at 8.15 a.m. with Dr. Zbigniew Lukoski is being booked now. One moment while I confirm it for you.",
+      "t": 156.23
+    },
+    {
+      "role": "agent",
+      "text": "You're welcome.",
+      "t": 156.98
+    },
+    {
+      "role": "patient",
+      "text": "Hello? Are we all set with that appointment?",
+      "t": 157.59
+    },
+    {
+      "role": "patient",
+      "text": "Great, thanks for your help. I appreciate it.",
+      "t": 160.95
+    },
+    {
+      "role": "agent",
+      "text": "Your appointment is set.",
+      "t": 161.12
+    },
+    {
+      "role": "agent",
+      "text": "Your appointment is...",
+      "t": 163.85
+    },
+    {
+      "role": "patient",
+      "text": "Perfect. I'll be there Thursday at 8:15. Thanks again. Take care.",
+      "t": 163.98
+    },
+    {
+      "role": "agent",
+      "text": "Yep.",
+      "t": 165.89
+    },
+    {
+      "role": "patient",
+      "text": "Goodbye now.",
+      "t": 165.91
+    },
+    {
+      "role": "agent",
+      "text": "You're all set for Thursday at 8.15 a.m. with Dr. Zignu Lukosky at Pivot Point Orthopedics. Please bring your photo ID, insurance card, and a list of any medications. Take care.",
+      "t": 182.37
+    },
+    {
+      "role": "patient",
+      "text": "Got it, I'll make sure to bring those. Thanks again, bye.",
+      "t": 182.64
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+Call: CA310fe693703487513ee7932f284e4a93  Scenario: weekend_request_edge_case
+
+[00:05] AGENT  : This call may be recorded for quality and training purposes.
+[00:07] AGENT  : Para Español, oprima el 2.
+[00:14] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:14] PATIENT: Hi, yeah, I’m hoping to set up an appointment for this Sunday at 10 a.m. I’ve been having some knee pain.
+[00:25] AGENT  : Can I have your full name and date of birth?
+[00:25] PATIENT: Sure, it’s Asher Pranay Palle, and my date of birth is February 16, 1995.
+[00:47] AGENT  : Just to confirm, I have your name as Asher Pauly and your date of birth as February 16th, 1995. Is that correct? If not, could you please spell your first and last name for me?
+[00:48] PATIENT: Sure, I can spell that out. First name: A-S-H-E-R. Last name: P-R-A-N-A-Y, and then P-A-L-L-E.
+[01:06] AGENT  : Thanks. Asher, I have you confirmed.
+[01:09] AGENT  : I'll look for the next available appointment.
+[01:12] AGENT  : Please note, the clinic is closed on Sundays.
+[01:15] AGENT  : Would you like to see what's open on another day or do you have a preferred time or provider?
+[01:16] PATIENT: Oh, I didn’t realize that. Well, can you tell me what’s the soonest available morning appointment then?
+[01:26] AGENT  : before I check the schedule.
+[01:33] AGENT  : Can you tell me a bit more about your pain? Is this a new issue or are you following up on a previous visit?
+[01:35] AGENT  : This helps me book the right type of appointment for you.
+[01:35] PATIENT: Yeah, it’s a new issue. My knee started bothering me a few days ago, and it’s gotten worse, so I wanted to have it checked out as soon as possible.
+[01:55] AGENT  : There are no open appointments available through next Wednesday. Would you like me to check for later dates? Or are you open to seeing any provider if something opens up sooner?
+[01:56] PATIENT: I’m open to any provider, and I’d really like something as soon as possible. Could you check the next available morning slot after Wednesday?
+[02:17] AGENT  : The soonest morning appointment after next Wednesday is Thursday, September 17th. The earliest slot is at 8.15 a.m. with Dr. Zygmunt Lukoski. Would you like to book that time?
+[02:18] PATIENT: Yeah, that sounds good. Let’s go ahead and book that 8:15 a.m. on Thursday.
+[02:35] PATIENT: All right, thanks. I’ll wait for that confirmation.
+[02:36] AGENT  : Your appointment for Thursday, September 17th at 8.15 a.m. with Dr. Zbigniew Lukoski is being booked now. One moment while I confirm it for you.
+[02:36] AGENT  : You're welcome.
+[02:37] PATIENT: Hello? Are we all set with that appointment?
+[02:40] PATIENT: Great, thanks for your help. I appreciate it.
+[02:41] AGENT  : Your appointment is set.
+[02:43] AGENT  : Your appointment is...
+[02:43] PATIENT: Perfect. I'll be there Thursday at 8:15. Thanks again. Take care.
+[02:45] AGENT  : Yep.
+[02:45] PATIENT: Goodbye now.
+[03:02] AGENT  : You're all set for Thursday at 8.15 a.m. with Dr. Zignu Lukosky at Pivot Point Orthopedics. Please bring your photo ID, insurance card, and a list of any medications. Take care.
+[03:02] PATIENT: Got it, I'll make sure to bring those. Thanks again, bye.
