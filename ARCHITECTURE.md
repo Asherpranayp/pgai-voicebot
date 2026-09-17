@@ -31,5 +31,6 @@ exposed to one vendor's realtime infrastructure and pricing; given the time budg
 and that voice quality is the priority-one bar here, that tradeoff was worth it.
 Audio format was also a deciding factor in keeping things simple: Twilio's Media
 Streams already speak mu-law 8kHz, which OpenAI Realtime accepts natively
-(`g711_ulaw`), so audio is relayed with zero transcoding or extra dependencies —
-one less thing to get wrong under a tight time budget.
+(`audio/pcmu`, the GA API's name for G.711 mu-law), so audio is relayed with zero
+transcoding or extra dependencies — one less thing to get wrong under a tight
+time budget.
