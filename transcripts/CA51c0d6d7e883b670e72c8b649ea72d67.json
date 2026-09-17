@@ -1,0 +1,112 @@
+{
+  "call_id": "CA51c0d6d7e883b670e72c8b649ea72d67",
+  "scenario_id": "refill_wrong_medication",
+  "started_at": 1789612500.47042,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 4.64
+    },
+    {
+      "role": "patient",
+      "text": "Perd\u00f3n,",
+      "t": 6.74
+    },
+    {
+      "role": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2.",
+      "t": 7.55
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?",
+      "t": 12.82
+    },
+    {
+      "role": "patient",
+      "text": "Hi, I\u2019m calling because I need a refill on that prescription\u2014the white pill I take for my shoulder. I\u2019m not exactly sure of the name though.",
+      "t": 14.22
+    },
+    {
+      "role": "agent",
+      "text": "I can help with that. May I have your full name and date of birth?",
+      "t": 27.64
+    },
+    {
+      "role": "patient",
+      "text": "Sure, it\u2019s Asher Pranay Palle, and my date of birth is February 16, 1995.",
+      "t": 28.82
+    },
+    {
+      "role": "agent",
+      "text": "Just to confirm, I have your name as Asher Pauly and your date of birth as February 16, 1995.",
+      "t": 44.56
+    },
+    {
+      "role": "agent",
+      "text": "Is that correct? If so, please spell your first and last name for me.",
+      "t": 48.55
+    },
+    {
+      "role": "patient",
+      "text": "Yeah, sure. The first name is A-S-H-E-R, and the last name is P-A-L-L-E.",
+      "t": 49.55
+    },
+    {
+      "role": "agent",
+      "text": "I don't see any medications on your chart that I can refill right now.",
+      "t": 71.91
+    },
+    {
+      "role": "agent",
+      "text": "Would you like to speak with someone about this?",
+      "t": 73.48
+    },
+    {
+      "role": "agent",
+      "text": "Just let me know.",
+      "t": 73.85
+    },
+    {
+      "role": "patient",
+      "text": "Hmm, that\u2019s odd. I know I had a prescription from your clinic before. Maybe it\u2019s under a different section or an old record?",
+      "t": 75.38
+    },
+    {
+      "role": "agent",
+      "text": "I understand that's frustrating.",
+      "t": 87.1
+    },
+    {
+      "role": "agent",
+      "text": "Would you like me to connect you to our patient support team to look into this further?",
+      "t": 91.32
+    },
+    {
+      "role": "patient",
+      "text": "Yeah, that would be helpful. Let\u2019s go ahead and do that, so we can figure out which pill it was.",
+      "t": 91.49
+    },
+    {
+      "role": "agent",
+      "text": "Transferring you now. Thank you",
+      "t": 96.71
+    },
+    {
+      "role": "agent",
+      "text": "BEEP",
+      "t": 98.23
+    },
+    {
+      "role": "agent",
+      "text": "Hello, you've reached the pretty good AI test line. Goodbye.",
+      "t": 103.25
+    },
+    {
+      "role": "patient",
+      "text": "Oh, wait, that\u2019s not what I expected. I still need help with the prescription.",
+      "t": 103.7
+    }
+  ]
+}
