@@ -63,14 +63,41 @@ _HANDLED_EVENTS = {
 }
 
 
-async def run_bridge(twilio_ws: WebSocket, scenario_id: str):
-    scenario = get_scenario(scenario_id)
-
+async def run_bridge(twilio_ws: WebSocket):
     await twilio_ws.accept()
 
     stream_sid = None
     call_sid = None
+    scenario_id = "simple_scheduling"
     transcript: CallTranscript | None = None
+
+    # The scenario is passed as a <Parameter> inside TwiML's <Stream> element
+    # (not a URL query string — Twilio doesn't forward that through to the
+    # WebSocket connection itself, see server.py's /twiml route), so it only
+    # becomes available once Twilio's "start" event arrives. Since the
+    # scenario drives the OpenAI session's system prompt, we have to consume
+    # messages here until we see "start" before we can even open the OpenAI
+    # connection.
+    first_media_msg = None
+    try:
+        async for raw in twilio_ws.iter_text():
+            msg = json.loads(raw)
+            if msg.get("event") == "start":
+                stream_sid = msg["start"]["streamSid"]
+                call_sid = msg["start"]["callSid"]
+                scenario_id = msg["start"].get("customParameters", {}).get("scenario", "simple_scheduling")
+                break
+            elif msg.get("event") == "media":
+                # Shouldn't normally arrive before "start", but don't drop it if it does.
+                first_media_msg = msg
+                break
+    except WebSocketDisconnect:
+        log.info("Twilio websocket disconnected before call started")
+        return
+
+    scenario = get_scenario(scenario_id)
+    transcript = CallTranscript(call_id=call_sid, scenario_id=scenario_id)
+    log.info("Call started: %s (scenario=%s)", call_sid, scenario_id)
 
     headers = {
         "Authorization": f"Bearer {OPENAI_API_KEY}",
@@ -107,19 +134,20 @@ async def run_bridge(twilio_ws: WebSocket, scenario_id: str):
         }))
 
         async def twilio_to_openai():
-            nonlocal stream_sid, call_sid, transcript
             try:
+                # Replay the one message (if any) we had to peek at above,
+                # before the "start"/"media" event loop proper begins.
+                if first_media_msg is not None:
+                    await openai_ws.send(json.dumps({
+                        "type": "input_audio_buffer.append",
+                        "audio": first_media_msg["media"]["payload"],
+                    }))
+
                 async for raw in twilio_ws.iter_text():
                     msg = json.loads(raw)
                     event = msg.get("event")
 
-                    if event == "start":
-                        stream_sid = msg["start"]["streamSid"]
-                        call_sid = msg["start"]["callSid"]
-                        transcript = CallTranscript(call_id=call_sid, scenario_id=scenario_id)
-                        log.info("Call started: %s (scenario=%s)", call_sid, scenario_id)
-
-                    elif event == "media":
+                    if event == "media":
                         await openai_ws.send(json.dumps({
                             "type": "input_audio_buffer.append",
                             "audio": msg["media"]["payload"],

@@ -37,11 +37,21 @@ def _ws_base_url() -> str:
 @app.api_route("/twiml", methods=["GET", "POST"])
 async def twiml(request: Request):
     scenario_id = request.query_params.get("scenario", "simple_scheduling")
-    stream_url = f"{_ws_base_url()}/media-stream?scenario={scenario_id}"
+    stream_url = f"{_ws_base_url()}/media-stream"
+    # NOTE: Twilio's <Stream> element does NOT forward the url's own query
+    # string through to the actual WebSocket connection it opens (verified by
+    # comparing the /twiml access log, which shows the full query string,
+    # against the /media-stream access log, which never does) — every call
+    # was silently falling back to the default scenario. The documented way
+    # to pass custom data through Media Streams is a <Parameter> child
+    # element, delivered in the "start" event's customParameters field
+    # instead, which realtime_bridge.py now reads.
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <Response>
   <Connect>
-    <Stream url="{stream_url}" />
+    <Stream url="{stream_url}">
+      <Parameter name="scenario" value="{scenario_id}" />
+    </Stream>
   </Connect>
 </Response>"""
     return Response(content=xml, media_type="text/xml")
@@ -49,8 +59,10 @@ async def twiml(request: Request):
 
 @app.websocket("/media-stream")
 async def media_stream(websocket: WebSocket):
-    scenario_id = websocket.query_params.get("scenario", "simple_scheduling")
-    await run_bridge(websocket, scenario_id)
+    # scenario_id is no longer known here — it arrives inside the Twilio
+    # "start" event's customParameters once the stream connects (see the
+    # note in /twiml above), so run_bridge itself reads the first message.
+    await run_bridge(websocket)
 
 
 @app.post("/recording-status")
