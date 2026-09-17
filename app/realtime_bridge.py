@@ -84,7 +84,12 @@ async def run_bridge(twilio_ws: WebSocket, scenario_id: str):
                 "instructions": scenario.system_prompt,
                 "audio": {
                     "input": {
-                        "format": "audio/pcmu",
+                        # NOTE: as of the GA API, "format" is an object, not a bare
+                        # string (the docs/examples are inconsistent on this, but the
+                        # API itself rejects a string with `invalid_type`). pcmu/G.711
+                        # mu-law is a fixed-rate 8kHz codec so no "rate" field is given
+                        # here — Twilio's Media Streams audio already is mu-law 8kHz.
+                        "format": {"type": "audio/pcmu"},
                         "transcription": {"model": "whisper-1"},
                         "turn_detection": {
                             "type": "server_vad",
@@ -94,7 +99,7 @@ async def run_bridge(twilio_ws: WebSocket, scenario_id: str):
                         },
                     },
                     "output": {
-                        "format": "audio/pcmu",
+                        "format": {"type": "audio/pcmu"},
                         "voice": OPENAI_VOICE,
                     },
                 },
