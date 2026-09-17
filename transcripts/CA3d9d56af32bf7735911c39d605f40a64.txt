@@ -1,0 +1,17 @@
+Call: CA3d9d56af32bf7735911c39d605f40a64  Scenario: medication_refill
+
+[00:04] AGENT  : This call may be recorded for quality and training purposes.
+[00:06] AGENT  : Para Español, oprima el 2.
+[00:14] AGENT  : Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:14] PATIENT: Hi, yeah, I’m calling because I need a refill on my meloxicam prescription. I’m running low and I want to get it sent to my usual pharmacy.
+[00:26] AGENT  : Can I get your full name and date of birth?
+[00:29] PATIENT: Sure, it’s Asher Pranay Palle, and my date of birth is February 16, 1995.
+[00:49] AGENT  : Just to confirm, I have your name as Asher Pauly and your date of birth as February 16, 1995. Is that correct? If so, please spell your first and last name for me.
+[00:50] PATIENT: Yeah, that's right. Let me spell it out: First name is A-S-H-E-R, and last name is P-A-L-L-E.
+[01:09] AGENT  : I don't see any medications on your chart that I can refill right now. If you'd like to speak with our patient support team about this, just let me know.
+[01:10] PATIENT: Oh, that’s odd. I’ve definitely had meloxicam from you before. Could you check again or connect me with someone who can help?
+[01:22] AGENT  : Transferring you know. Thank you.
+[01:23] PATIENT: Wait, hold on, before transferring, can we double-check the pharmacy info on file?
+[01:23] AGENT  : Beep.
+[01:27] AGENT  : Hello, you've reached the Pretty Good AI test line. Goodbye.
+[01:28] PATIENT: Uh, hello? That’s strange. I’m still here and I need that refill.
