@@ -1,0 +1,112 @@
+{
+  "call_id": "CA47b593534d5be9d977da43c1968c693e",
+  "scenario_id": "simple_scheduling",
+  "started_at": 1789608126.25867,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 4.26
+    },
+    {
+      "role": "patient",
+      "text": "Lo siento,",
+      "t": 6.14
+    },
+    {
+      "role": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2.",
+      "t": 7.04
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?",
+      "t": 12.75
+    },
+    {
+      "role": "patient",
+      "text": "Hi, yeah, I\u2019ve been having some knee pain for about a week, and I\u2019m hoping to set up a new-patient appointment as soon as possible. I\u2019m pretty flexible on the day, but mornings would be best.",
+      "t": 14.8
+    },
+    {
+      "role": "agent",
+      "text": "I can help with that. May I have your full name and date of birth?",
+      "t": 31.54
+    },
+    {
+      "role": "patient",
+      "text": "Sure, it\u2019s Asher Pranay Palle, and my date of birth is February 16, 1995.",
+      "t": 31.62
+    },
+    {
+      "role": "agent",
+      "text": "Just to confirm, I have your name as Ashford Pauley and your date of birth as February 16th, 1995. Is that correct? If so, please spell your first and last name for me.",
+      "t": 53.14
+    },
+    {
+      "role": "patient",
+      "text": "Sure, it\u2019s A-S-H-E-R for the first name, and the last name is P-A-L-L-E.",
+      "t": 54.38
+    },
+    {
+      "role": "patient",
+      "text": "Yeah, exactly, that\u2019s what it\u2019s for\u2014my knee pain.",
+      "t": 78.32
+    },
+    {
+      "role": "agent",
+      "text": "Thanks, Asher. Just to make sure I booked the right appointment, is this visit mainly to address your knee pain as a new patient?",
+      "t": 78.82
+    },
+    {
+      "role": "agent",
+      "text": "There are several morning openings with Dr. Judy Hauser this Thursday. The earliest is at 10.30 a.m. Would you like to book that time?",
+      "t": 94.93
+    },
+    {
+      "role": "patient",
+      "text": "Hmm, that could work. Let me double-check my schedule real quick.",
+      "t": 95.54
+    },
+    {
+      "role": "agent",
+      "text": "No problem. Take your time and let me know if you want to keep the Thursday 1030 a.m. slot with Dr. Dugy Howser.",
+      "t": 108.8
+    },
+    {
+      "role": "patient",
+      "text": "All right, I think that time works for me. Let\u2019s go ahead and book it.",
+      "t": 109.37
+    },
+    {
+      "role": "agent",
+      "text": "You're all set for Thursday, September 17th at 10.30 a.m. with Dr. Doogie Houser at Pivot Point Orthopedics. Please bring your photo ID, insurance card, a list of your current medications, and any imaging discs if you have them. Would you like me to text you these appointment details?",
+      "t": 134.17
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that would be great. Please send me the details by text, thanks.",
+      "t": 134.53
+    },
+    {
+      "role": "agent",
+      "text": "The appointment details have already been sent to your phone. If you need anything else, just let me know.",
+      "t": 146.69
+    },
+    {
+      "role": "patient",
+      "text": "Got it, I appreciate it. That\u2019s all I needed for now. Thanks for your help, have a good one.",
+      "t": 147.36
+    },
+    {
+      "role": "patient",
+      "text": "Thanks, you too. Take care.",
+      "t": 159.46
+    },
+    {
+      "role": "agent",
+      "text": "You're welcome. Your appointment is confirmed. Have a great day!",
+      "t": 159.48
+    }
+  ]
+}

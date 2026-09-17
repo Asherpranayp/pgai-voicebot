@@ -1,0 +1,23 @@
+Call: CA47b593534d5be9d977da43c1968c693e  Scenario: simple_scheduling
+
+[00:04] AGENT  : This call may be recorded for quality and training purposes.
+[00:06] PATIENT: Lo siento,
+[00:07] AGENT  : Para Español, oprima el 2.
+[00:12] AGENT  : Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:14] PATIENT: Hi, yeah, I’ve been having some knee pain for about a week, and I’m hoping to set up a new-patient appointment as soon as possible. I’m pretty flexible on the day, but mornings would be best.
+[00:31] AGENT  : I can help with that. May I have your full name and date of birth?
+[00:31] PATIENT: Sure, it’s Asher Pranay Palle, and my date of birth is February 16, 1995.
+[00:53] AGENT  : Just to confirm, I have your name as Ashford Pauley and your date of birth as February 16th, 1995. Is that correct? If so, please spell your first and last name for me.
+[00:54] PATIENT: Sure, it’s A-S-H-E-R for the first name, and the last name is P-A-L-L-E.
+[01:18] PATIENT: Yeah, exactly, that’s what it’s for—my knee pain.
+[01:18] AGENT  : Thanks, Asher. Just to make sure I booked the right appointment, is this visit mainly to address your knee pain as a new patient?
+[01:34] AGENT  : There are several morning openings with Dr. Judy Hauser this Thursday. The earliest is at 10.30 a.m. Would you like to book that time?
+[01:35] PATIENT: Hmm, that could work. Let me double-check my schedule real quick.
+[01:48] AGENT  : No problem. Take your time and let me know if you want to keep the Thursday 1030 a.m. slot with Dr. Dugy Howser.
+[01:49] PATIENT: All right, I think that time works for me. Let’s go ahead and book it.
+[02:14] AGENT  : You're all set for Thursday, September 17th at 10.30 a.m. with Dr. Doogie Houser at Pivot Point Orthopedics. Please bring your photo ID, insurance card, a list of your current medications, and any imaging discs if you have them. Would you like me to text you these appointment details?
+[02:14] PATIENT: Yes, that would be great. Please send me the details by text, thanks.
+[02:26] AGENT  : The appointment details have already been sent to your phone. If you need anything else, just let me know.
+[02:27] PATIENT: Got it, I appreciate it. That’s all I needed for now. Thanks for your help, have a good one.
+[02:39] PATIENT: Thanks, you too. Take care.
+[02:39] AGENT  : You're welcome. Your appointment is confirmed. Have a great day!
