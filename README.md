@@ -4,13 +4,15 @@ An automated "patient" that calls Pretty Good AI's demo clinic line (Pivot Point
 Orthopedics), holds a natural voice conversation with their AI phone agent across a
 range of scenarios, records/transcribes the call, and flags quality issues.
 
-See `ARCHITECTURE.md` for how it works and why it's built this way.
+Built with **LiveKit Agents in pipeline mode** (separate STT -> LLM -> TTS stages,
+no realtime/speech-to-speech model), per the assessment's stack requirement. See
+`ARCHITECTURE.md` for how it works and why it's built this way.
 
 ## Setup
 
-Requirements: Python 3.10+, a Twilio account with a Voice-capable number, an OpenAI
-account with Realtime API access, and [ngrok](https://ngrok.com) (or any tool that
-gives you a public HTTPS URL tunneling to your machine).
+Requirements: Python 3.10+, `ffmpeg` on your PATH (for mixing the call recording),
+a [LiveKit Cloud](https://cloud.livekit.io) project, a Twilio account with a
+Voice-capable number, and an OpenAI API key.
 
 ```bash
 git clone <this-repo>
@@ -18,46 +20,62 @@ cd pgai-voicebot
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
-# edit .env: fill in TWILIO_*, OPENAI_API_KEY, and PUBLIC_BASE_URL (see below)
+# edit .env — see the two setup steps below for where each value comes from
 ```
 
-### Getting a public URL for Twilio
+### 1. Twilio Elastic SIP Trunk
 
-Twilio needs to reach your machine to open the media stream. In one terminal:
+LiveKit dials out through a SIP trunk backed by your existing Twilio number:
+
+1. In the Twilio console, go to **Elastic SIP Trunking -> Trunks** and create a trunk.
+2. Under **Termination**, set a Termination SIP URI (e.g. `your-name.pstn.twilio.com`)
+   — this is `SIP_TRUNK_ADDRESS`.
+3. Under **Authentication**, create a **Credential List** with a username/password —
+   these are `SIP_TRUNK_USERNAME` / `SIP_TRUNK_PASSWORD`. Twilio never shows a saved
+   password again, so note it down immediately.
+4. Under **Numbers**, add the Twilio number you're calling from — that's
+   `SIP_TRUNK_FROM_NUMBER` (E.164 format, e.g. `+19205515133`).
+
+### 2. LiveKit Cloud project + outbound trunk
+
+1. Create a project at [cloud.livekit.io](https://cloud.livekit.io) and copy
+   `LIVEKIT_URL` / `LIVEKIT_API_KEY` / `LIVEKIT_API_SECRET` from **Settings -> Keys**.
+2. Fill in `.env` with the LiveKit values plus the four `SIP_TRUNK_*` Twilio values
+   from step 1, then run:
 
 ```bash
-ngrok http 8000
+python -m app.create_sip_trunk
 ```
 
-Copy the `https://xxxx.ngrok-free.app` URL it prints into `PUBLIC_BASE_URL` in `.env`.
-(Free ngrok URLs change every restart — update `.env` again if you restart ngrok.)
+This prints a trunk id (`ST_xxxxxxxxxxxx`) — copy it into `.env` as `SIP_TRUNK_ID`.
+It's a one-time step; only re-run it if you want to recreate the trunk from scratch.
 
 ## Running a call
 
-One command starts the server; a second places a call.
+Start the agent worker once (it stays running and waits for dispatched jobs), then
+dispatch calls against it:
 
-**Terminal 1** — start the bridge server (leave this running):
-
-```bash
-python -m uvicorn app.server:app --port 8000
-```
-
-**Terminal 2** — place a call for a given scenario:
+**Terminal 1** — start the worker (leave this running):
 
 ```bash
-python -m app.place_call --list          # see all scenario ids
-python -m app.place_call simple_scheduling
+python -m app.agent start
 ```
 
-The bot places the call, holds the conversation, and once it ends you'll find:
+**Terminal 2** — dispatch a call for a given scenario:
 
-- `recordings/<CallSid>.mp3` — the full call audio
-- `transcripts/<CallSid>.txt` / `.json` — a timestamped transcript of both sides
+```bash
+python -m app.dispatch_call --list          # see all scenario ids
+python -m app.dispatch_call simple_scheduling
+```
 
-To run all scenarios back-to-back (waiting for each call to finish before starting
-the next isn't automated — Twilio calls take 1-3 minutes each and you'll want to
-listen/verify as you go), just call `place_call.py` again with the next scenario id
-once a call completes.
+The bot places the call, holds the conversation, and once it ends (or after a 4
+minute safety cap) you'll find:
+
+- `recordings/<room_name>.mp3` — the full call audio, both sides mixed down
+- `transcripts/<room_name>.txt` / `.json` — a timestamped transcript of both sides
+
+Calls run 1-3 minutes each — watch Terminal 1's logs and wait for one to finish
+before dispatching the next.
 
 ## Generating the bug report
 
@@ -78,17 +96,18 @@ over a long list of noise.
 
 ```
 app/
-  config.py           env var loading
-  scenarios.py         the patient personas / test scenarios
-  server.py             FastAPI app Twilio talks to (TwiML + media stream + callbacks)
-  realtime_bridge.py   audio bridge between Twilio and OpenAI Realtime
-  transcript_store.py  accumulates + saves a call's transcript
-  place_call.py        CLI to place one outbound call
+  config.py             env var loading
+  scenarios.py          the patient personas / test scenarios
+  agent.py              LiveKit Agents worker: STT -> LLM -> TTS pipeline, SIP dial-out,
+                         transcript capture, dual-track recording + mixdown
+  create_sip_trunk.py   one-time script: creates the LiveKit outbound SIP trunk
+  dispatch_call.py      CLI to dispatch one outbound call to the running worker
+  transcript_store.py   accumulates + saves a call's transcript
 bug_analysis/
-  analyze.py            offline LLM pass over transcripts -> bug_report.md
-recordings/             call audio (.mp3), one per call
-transcripts/            call transcripts (.txt + .json), one per call
-bug_report/             bug_report.md
+  analyze.py             offline LLM pass over transcripts -> bug_report.md
+recordings/              call audio (.mp3), one per call
+transcripts/             call transcripts (.txt + .json), one per call
+bug_report/              bug_report.md
 ```
 
 ## Environment variables

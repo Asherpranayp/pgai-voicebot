@@ -1,7 +1,6 @@
-fastapi==0.115.0
-uvicorn[standard]==0.30.6
-twilio==9.3.7
+livekit-agents==1.0.17
+livekit-plugins-openai==1.0.17
+livekit-plugins-silero==1.0.17
+livekit-api==0.8.2
 openai==1.51.0
-websockets==13.1
 python-dotenv==1.0.1
-requests==2.32.3
