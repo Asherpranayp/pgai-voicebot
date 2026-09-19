@@ -1,6 +1,6 @@
 livekit-agents==1.0.17
 livekit-plugins-openai==1.0.17
 livekit-plugins-silero==1.0.17
-livekit-api==0.8.2
+livekit-api
 openai==1.51.0
 python-dotenv==1.0.1
