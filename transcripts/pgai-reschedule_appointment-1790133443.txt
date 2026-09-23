@@ -1,0 +1,32 @@
+Call: pgai-reschedule_appointment-1790133443  Scenario: reschedule_appointment
+
+[00:08] AGENT  : This call may be recorded for quality and training purposes.
+[00:13] AGENT  : Thanks for calling Pivot Point Orthopedics.
+[00:17] AGENT  : Part of Pretty Good AI. How may I help you today?
+[00:29] PATIENT: Hi there! I’d like to reschedule my appointment. I have one set for this Thursday at 2 PM, but I have a work conflict. Could we move it to sometime next week, preferably after 3 PM?
+[00:36] AGENT  : I see you're calling from the number we have on file.
+[00:37] AGENT  : Am I speaking with Asher?
+[00:39] PATIENT: Yes, that's me!
+[00:44] AGENT  : Please provide your date of birth.
+[00:48] PATIENT: It's February 16, 1995.
+[01:10] AGENT  : I see you have an appointment scheduled for Wednesday, September 23.
+[01:16] AGENT  : At 9AM with Abricker at Nashville. Two two zero Athens Way.
+[01:18] AGENT  : Is this the appointment you wanna reschedule?
+[01:24] PATIENT: Actually, I thought my appointment was this Thursday at 2 PM. Can you double-check that for me?
+[01:30] AGENT  : The only appointment I see on file is for tomorrow.
+[01:32] AGENT  : Wednesday, September 23,
+[01:36] AGENT  : at 9AM with Abeker at Nashville 220 Athens Way.
+[01:39] AGENT  : There are no appointments listed for Thursday at 2PM.
+[01:42] AGENT  : Would you like to reschedule the one for tomorrow?
+[01:48] PATIENT: Yes, please. I’d like to move that appointment to sometime next week, ideally after 3 PM.
+[01:54] AGENT  : There are no openings after 3PM next week.
+[02:02] AGENT  : Next available times are Monday, September 28 at 09:45AM or 10:30AM and Tuesday, September 29 at 9AM.
+[02:07] AGENT  : Would you like to try a different time of day? Or should I connect you to someone at the clinic for more help?
+[02:15] PATIENT: Um, could you check if there are any openings later in the week instead? Like Wednesday or Thursday after 3 PM?
+[02:26] AGENT  : There are no openings on Wednesday or Thursday afternoons between September 30 and October 31.
+[02:32] AGENT  : Would you like to try a different day or time, or should I connect you to someone at the clinic who can help further?
+[02:37] PATIENT: Could you connect me to someone at the clinic? Maybe they can find a solution for me.
+[02:43] AGENT  : Transferring you now. Thank you.
+[02:44] PATIENT: Thank you!
+[02:48] AGENT  : Hello. You've reached the Pretty Good AI test line. Goodbye.
+[02:50] PATIENT: Oh, um, wait!

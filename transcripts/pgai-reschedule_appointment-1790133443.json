@@ -1,0 +1,157 @@
+{
+  "call_id": "pgai-reschedule_appointment-1790133443",
+  "scenario_id": "reschedule_appointment",
+  "started_at": 1790133444.4027805,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 8.62
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics.",
+      "t": 13.87
+    },
+    {
+      "role": "agent",
+      "text": "Part of Pretty Good AI. How may I help you today?",
+      "t": 17.39
+    },
+    {
+      "role": "patient",
+      "text": "Hi there! I\u2019d like to reschedule my appointment. I have one set for this Thursday at 2 PM, but I have a work conflict. Could we move it to sometime next week, preferably after 3 PM?",
+      "t": 29.6
+    },
+    {
+      "role": "agent",
+      "text": "I see you're calling from the number we have on file.",
+      "t": 36.01
+    },
+    {
+      "role": "agent",
+      "text": "Am I speaking with Asher?",
+      "t": 37.71
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's me!",
+      "t": 39.99
+    },
+    {
+      "role": "agent",
+      "text": "Please provide your date of birth.",
+      "t": 44.05
+    },
+    {
+      "role": "patient",
+      "text": "It's February 16, 1995.",
+      "t": 48.13
+    },
+    {
+      "role": "agent",
+      "text": "I see you have an appointment scheduled for Wednesday, September 23.",
+      "t": 70.57
+    },
+    {
+      "role": "agent",
+      "text": "At 9AM with Abricker at Nashville. Two two zero Athens Way.",
+      "t": 76.21
+    },
+    {
+      "role": "agent",
+      "text": "Is this the appointment you wanna reschedule?",
+      "t": 78.45
+    },
+    {
+      "role": "patient",
+      "text": "Actually, I thought my appointment was this Thursday at 2 PM. Can you double-check that for me?",
+      "t": 84.9
+    },
+    {
+      "role": "agent",
+      "text": "The only appointment I see on file is for tomorrow.",
+      "t": 90.19
+    },
+    {
+      "role": "agent",
+      "text": "Wednesday, September 23,",
+      "t": 92.3
+    },
+    {
+      "role": "agent",
+      "text": "at 9AM with Abeker at Nashville 220 Athens Way.",
+      "t": 96.72
+    },
+    {
+      "role": "agent",
+      "text": "There are no appointments listed for Thursday at 2PM.",
+      "t": 99.69
+    },
+    {
+      "role": "agent",
+      "text": "Would you like to reschedule the one for tomorrow?",
+      "t": 102.0
+    },
+    {
+      "role": "patient",
+      "text": "Yes, please. I\u2019d like to move that appointment to sometime next week, ideally after 3 PM.",
+      "t": 108.49
+    },
+    {
+      "role": "agent",
+      "text": "There are no openings after 3PM next week.",
+      "t": 114.21
+    },
+    {
+      "role": "agent",
+      "text": "Next available times are Monday, September 28 at 09:45AM or 10:30AM and Tuesday, September 29 at 9AM.",
+      "t": 122.67
+    },
+    {
+      "role": "agent",
+      "text": "Would you like to try a different time of day? Or should I connect you to someone at the clinic for more help?",
+      "t": 127.79
+    },
+    {
+      "role": "patient",
+      "text": "Um, could you check if there are any openings later in the week instead? Like Wednesday or Thursday after 3 PM?",
+      "t": 135.83
+    },
+    {
+      "role": "agent",
+      "text": "There are no openings on Wednesday or Thursday afternoons between September 30 and October 31.",
+      "t": 146.7
+    },
+    {
+      "role": "agent",
+      "text": "Would you like to try a different day or time, or should I connect you to someone at the clinic who can help further?",
+      "t": 152.05
+    },
+    {
+      "role": "patient",
+      "text": "Could you connect me to someone at the clinic? Maybe they can find a solution for me.",
+      "t": 157.98
+    },
+    {
+      "role": "agent",
+      "text": "Transferring you now. Thank you.",
+      "t": 163.18
+    },
+    {
+      "role": "patient",
+      "text": "Thank you!",
+      "t": 164.71
+    },
+    {
+      "role": "agent",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye.",
+      "t": 168.81
+    },
+    {
+      "role": "patient",
+      "text": "Oh, um, wait!",
+      "t": 170.57
+    }
+  ]
+}
