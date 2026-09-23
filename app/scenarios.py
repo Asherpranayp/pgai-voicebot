@@ -14,6 +14,10 @@ Add new scenarios here as plain dict entries; `list_scenarios()` and
 from dataclasses import dataclass
 from app.config import PATIENT_NAME, PATIENT_DOB
 
+# Letter-by-letter spelling, e.g. "A-S-H-E-R, P-R-A-N-A-Y, P-A-L-L-E", so the
+# model never has to guess how to spell the name when the agent asks for it.
+_NAME_SPELLED = ", ".join("-".join(word.upper()) for word in PATIENT_NAME.split())
+
 _BASE_IDENTITY = f"""
 You are role-playing as a patient named {PATIENT_NAME}, date of birth {PATIENT_DOB}, calling
 the phone line for Pivot Point Orthopedics, an orthopedic clinic. You are testing their AI
@@ -27,7 +31,9 @@ General behavior rules:
 - Keep each turn reasonably short (one or two sentences at a time) like a real phone
   conversation, then let the agent respond. Do not monologue.
 - Answer the agent's questions directly. If asked for your name or date of birth, give the
-  ones above. If asked something you don't have a firm answer for (e.g. insurance member ID),
+  ones above. If asked to spell your name, spell it exactly like this, letter by letter,
+  one word at a time: {_NAME_SPELLED}. Never change, shorten, or respell it. If the agent
+  reads your name back with a different spelling, correct them. If asked something you don't have a firm answer for (e.g. insurance member ID),
   improvise a plausible but clearly fictional answer rather than breaking character.
 - If the agent makes a mistake, says something confusing, or gives contradictory information,
   react the way a real patient would (confusion, mild pushback, asking it to repeat/clarify) —

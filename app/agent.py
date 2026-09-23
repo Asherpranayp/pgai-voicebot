@@ -25,6 +25,8 @@ import asyncio
 import logging
 import time
 import wave
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 from livekit import agents, api, rtc
@@ -239,7 +241,16 @@ async def entrypoint(ctx: JobContext):
         transcript.add(role, text)
         log.info("[%s] %s", role, text)
 
-    agent = Agent(instructions=scenario.system_prompt)
+    # The LLM has no idea what today's date is and will invent one (in testing
+    # it told the clinic "it's February right now" in September), so give it
+    # the real date in the clinic's timezone (805 area code = California).
+    today = datetime.now(ZoneInfo("America/Los_Angeles"))
+    date_note = (
+        f"\n\nToday's date is {today:%A, %B} {today.day}, {today.year}. "
+        "Treat any dates the agent offers relative to this date, and never claim "
+        "it is a different date or month."
+    )
+    agent = Agent(instructions=scenario.system_prompt + date_note)
     try:
         await asyncio.wait_for(session.start(agent=agent, room=ctx.room), timeout=30)
     except BaseException as e:  # includes CancelledError, so a hang can't exit silently
@@ -249,12 +260,12 @@ async def entrypoint(ctx: JobContext):
     log.info("Step 2 done: pipeline running, conversation in progress")
 
     # Wait for the call to end: the clinic hangs up (normal end of a
-    # conversation) or a 4-minute safety cap is reached.
+    # conversation) or a 5-minute safety cap is reached.
     try:
-        await asyncio.wait_for(callee_left.wait(), timeout=240)
+        await asyncio.wait_for(callee_left.wait(), timeout=300)
         log.info("Call ended (clinic hung up)")
     except asyncio.TimeoutError:
-        log.info("Call hit the 4-minute cap, ending it")
+        log.info("Call hit the 5-minute cap, ending it")
     await finalize()
     ctx.shutdown(reason="call finished")
 
