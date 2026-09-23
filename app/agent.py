@@ -116,19 +116,23 @@ async def entrypoint(ctx: JobContext):
                 asyncio.create_task(_record_track_to_wav(track, patient_wav, stop_recording))
             )
 
-    # --- Step 1: dial out FIRST, before starting the voice pipeline. ---
-    # This follows LiveKit's recommended outbound-call pattern. An earlier
-    # version started the AgentSession first; the job hung inside that step
-    # and never reached the dial-out at all (LiveKit's Telephony > Calls log
-    # showed 0 calls), which initially looked like a SIP problem.
-    callee_joined = asyncio.Event()
+    # --- Step 1: dial out and wait for the clinic's line to answer. ---
+    # We dial BEFORE starting the voice pipeline (LiveKit's recommended
+    # outbound pattern). The SIP participant joins the room as soon as the
+    # phone starts ringing, so "joined" does not mean "answered":
+    # wait_until_answered=True blocks until the call is actually picked up,
+    # or raises with the real SIP status code (busy, rejected, no answer...).
+    @ctx.room.on("participant_attributes_changed")
+    def on_attrs_changed(changed: dict, participant: rtc.Participant):
+        if "sip.callStatus" in changed:
+            log.info("SIP call status: %s", changed["sip.callStatus"])
 
-    @ctx.room.on("participant_connected")
-    def on_participant_connected(participant: rtc.RemoteParticipant):
-        log.info("Participant joined room %s: %s", ctx.room.name, participant.identity)
-        callee_joined.set()
+    @ctx.room.on("participant_disconnected")
+    def on_participant_disconnected(participant: rtc.RemoteParticipant):
+        log.info("Participant left room %s: %s (reason: %s)",
+                 ctx.room.name, participant.identity, getattr(participant, "disconnect_reason", "?"))
 
-    log.info("Step 1: requesting SIP call to %s via trunk %s", TARGET_NUMBER, SIP_TRUNK_ID)
+    log.info("Step 1: dialing %s via trunk %s", TARGET_NUMBER, SIP_TRUNK_ID)
     lkapi = api.LiveKitAPI(url=LIVEKIT_URL, api_key=LIVEKIT_API_KEY, api_secret=LIVEKIT_API_SECRET)
     try:
         await asyncio.wait_for(
@@ -139,37 +143,30 @@ async def entrypoint(ctx: JobContext):
                     room_name=ctx.room.name,
                     participant_identity="pivot-point-agent",
                     participant_name="Pivot Point Orthopedics Agent",
-                    wait_until_answered=False,
+                    wait_until_answered=True,
                 )
             ),
-            timeout=20,
+            timeout=60,
         )
-        log.info("Step 1 done: SIP request accepted, waiting for answer")
+        log.info("Step 1 done: call answered")
     except asyncio.TimeoutError:
-        log.error("Step 1 FAILED: create_sip_participant did not return within 20s")
+        log.error("Step 1 FAILED: call not answered within 60s")
         await lkapi.aclose()
         transcript.save()
         return
-    except Exception:
-        log.exception("Step 1 FAILED: SIP request raised an error")
+    except Exception as e:
+        # A rejected/busy/unanswered call raises a TwirpError carrying the SIP
+        # status code in its metadata; read it defensively across SDK versions.
+        meta = getattr(e, "metadata", None) or {}
+        log.error("Step 1 FAILED: %s: %s (sip status %s %s)", type(e).__name__,
+                  getattr(e, "message", e), meta.get("sip_status_code"), meta.get("sip_status"))
         await lkapi.aclose()
         transcript.save()
         return
     await lkapi.aclose()
 
-    # --- Step 2: wait for the clinic's line to actually pick up. ---
-    log.info("Step 2: waiting up to 45s for the callee to join")
-    if not ctx.room.remote_participants:
-        try:
-            await asyncio.wait_for(callee_joined.wait(), timeout=45)
-        except asyncio.TimeoutError:
-            log.error("Step 2 FAILED: nobody joined within 45s (check Telephony > Calls in LiveKit)")
-            transcript.save()
-            return
-    log.info("Step 2 done: SIP call answered")
-
-    # --- Step 3: start the STT -> LLM -> TTS pipeline on the live call. ---
-    log.info("Step 3: starting AgentSession")
+    # --- Step 2: start the STT -> LLM -> TTS pipeline on the live call. ---
+    log.info("Step 2: starting AgentSession")
     session = AgentSession(
         stt=openai.STT(model=OPENAI_STT_MODEL),
         llm=openai.LLM(model=OPENAI_LLM_MODEL),
@@ -192,11 +189,11 @@ async def entrypoint(ctx: JobContext):
     agent = Agent(instructions=scenario.system_prompt)
     try:
         await asyncio.wait_for(session.start(agent=agent, room=ctx.room), timeout=30)
-    except asyncio.TimeoutError:
-        log.error("Step 3 FAILED: session.start() did not return within 30s")
+    except BaseException as e:  # includes CancelledError, so a hang can't exit silently
+        log.error("Step 2 FAILED: session.start() did not complete (%s: %s)", type(e).__name__, e)
         transcript.save()
-        return
-    log.info("Step 3 done: pipeline running, conversation in progress")
+        raise
+    log.info("Step 2 done: pipeline running, conversation in progress")
 
     # Let the scenario play out naturally; the patient persona in
     # scenarios.py is instructed to close the call itself once its goal is
