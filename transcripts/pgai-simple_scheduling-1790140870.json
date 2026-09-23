@@ -1,0 +1,147 @@
+{
+  "call_id": "pgai-simple_scheduling-1790140870",
+  "scenario_id": "simple_scheduling",
+  "started_at": 1790140871.8674636,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 11.51
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics. Part of pretty good AI, How may I help you today?",
+      "t": 17.94
+    },
+    {
+      "role": "patient",
+      "text": "Hi there! I\u2019m looking to schedule a new-patient appointment. I've been having some knee pain that started about a week ago, and I\u2019d like to get it checked out as soon as possible.",
+      "t": 29.25
+    },
+    {
+      "role": "agent",
+      "text": "Can you please provide your full name and date of birth?",
+      "t": 34.45
+    },
+    {
+      "role": "patient",
+      "text": "Sure! My name is Asher Pranay Palle, and my date of birth is February 16, 1995.",
+      "t": 42.49
+    },
+    {
+      "role": "agent",
+      "text": "Just to confirm, I have your name as Asher Palle and your date of birth as 02/16/1995? Is that correct? If so, please spell your first and last name for me.",
+      "t": 57.33
+    },
+    {
+      "role": "patient",
+      "text": "Actually, it's Asher Pranay Palle. So that's A-S-H-E-R, P-R-A-N-A-Y, P-A-L-L-E.",
+      "t": 71.2
+    },
+    {
+      "role": "agent",
+      "text": "Thank you. Just to confirm, is your full name Asher Pranay Palle, and your date of birth is 02/16/1995?",
+      "t": 83.35
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's correct! My full name is Asher Pranay Palle, and my date of birth is February 16, 1995.",
+      "t": 94.06
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for confirming your details, Asher. Since you mentioned knee pain that started about a week ago and you want to be seen as soon as possible, Would you like this visit to be for an urgent concern?",
+      "t": 109.3
+    },
+    {
+      "role": "agent",
+      "text": "Or are you looking for a general new patient consultation?",
+      "t": 112.85
+    },
+    {
+      "role": "patient",
+      "text": "I'm looking for an urgent concern visit since I'm really hoping to get this knee pain checked out soon.",
+      "t": 119.98
+    },
+    {
+      "role": "agent",
+      "text": "Do you have a specific provider you'd like to see? Or are you open to the first available appointment?",
+      "t": 128.89
+    },
+    {
+      "role": "patient",
+      "text": "I'm open to the first available appointment. Just want to get in as soon as possible!",
+      "t": 133.76
+    },
+    {
+      "role": "agent",
+      "text": "Let me check the schedule for the soonest available appointment for an urgent knee evaluation. One moment.",
+      "t": 143.25
+    },
+    {
+      "role": "patient",
+      "text": "Sure, take your",
+      "t": 144.92
+    },
+    {
+      "role": "agent",
+      "text": "There are no urgent",
+      "t": 145.78
+    },
+    {
+      "role": "agent",
+      "text": "It",
+      "t": 149.25
+    },
+    {
+      "role": "patient",
+      "text": "Wait, I'm sorry, could you repeat that? It sounded",
+      "t": 149.27
+    },
+    {
+      "role": "patient",
+      "text": "It sounds like there was a bit of a mix-up. Could you repeat that for me? I didn't catch everything.",
+      "t": 155.32
+    },
+    {
+      "role": "agent",
+      "text": "No problem. I checked for urgent appointments to evaluate your knee pain as soon as possible, but there are no open slots available through next Tuesday. Would you like me to look for openings after that? Or is there a specific date you prefer?",
+      "t": 171.22
+    },
+    {
+      "role": "patient",
+      "text": "Okay, I understand. Yes, please look for openings after next Tuesday. I\u2019m flexible, but I would prefer mornings if possible.",
+      "t": 181.1
+    },
+    {
+      "role": "agent",
+      "text": "I check for morning and other urgent appointments after next two but there are still no open slots available. Would you like me to have someone from the clinic follow-up with you as soon as an appointment opens up?",
+      "t": 195.96
+    },
+    {
+      "role": "patient",
+      "text": "That would be great, thank you! I\u2019d appreciate it if someone could follow up with me when an appointment becomes available.",
+      "t": 203.13
+    },
+    {
+      "role": "agent",
+      "text": "I've let the clinic know you need a morning appointment for your knee pain as soon as one opens up. Someone from our team will follow-up with you as soon as possible. Is there anything else I can help you with today?",
+      "t": 223.35
+    },
+    {
+      "role": "patient",
+      "text": "No, that\u2019s everything for now. I really appreciate your help! Thank you, and have a great day!",
+      "t": 230.38
+    },
+    {
+      "role": "agent",
+      "text": "You're all set. The clinic will reach out when an appointment is available. Take care, and have a good day.",
+      "t": 238.65
+    },
+    {
+      "role": "patient",
+      "text": "Thanks again! You too, take care!",
+      "t": 242.36
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+Call: pgai-simple_scheduling-1790140870  Scenario: simple_scheduling
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:17] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of pretty good AI, How may I help you today?
+[00:29] PATIENT: Hi there! I’m looking to schedule a new-patient appointment. I've been having some knee pain that started about a week ago, and I’d like to get it checked out as soon as possible.
+[00:34] AGENT  : Can you please provide your full name and date of birth?
+[00:42] PATIENT: Sure! My name is Asher Pranay Palle, and my date of birth is February 16, 1995.
+[00:57] AGENT  : Just to confirm, I have your name as Asher Palle and your date of birth as 02/16/1995? Is that correct? If so, please spell your first and last name for me.
+[01:11] PATIENT: Actually, it's Asher Pranay Palle. So that's A-S-H-E-R, P-R-A-N-A-Y, P-A-L-L-E.
+[01:23] AGENT  : Thank you. Just to confirm, is your full name Asher Pranay Palle, and your date of birth is 02/16/1995?
+[01:34] PATIENT: Yes, that's correct! My full name is Asher Pranay Palle, and my date of birth is February 16, 1995.
+[01:49] AGENT  : Thanks for confirming your details, Asher. Since you mentioned knee pain that started about a week ago and you want to be seen as soon as possible, Would you like this visit to be for an urgent concern?
+[01:52] AGENT  : Or are you looking for a general new patient consultation?
+[01:59] PATIENT: I'm looking for an urgent concern visit since I'm really hoping to get this knee pain checked out soon.
+[02:08] AGENT  : Do you have a specific provider you'd like to see? Or are you open to the first available appointment?
+[02:13] PATIENT: I'm open to the first available appointment. Just want to get in as soon as possible!
+[02:23] AGENT  : Let me check the schedule for the soonest available appointment for an urgent knee evaluation. One moment.
+[02:24] PATIENT: Sure, take your
+[02:25] AGENT  : There are no urgent
+[02:29] AGENT  : It
+[02:29] PATIENT: Wait, I'm sorry, could you repeat that? It sounded
+[02:35] PATIENT: It sounds like there was a bit of a mix-up. Could you repeat that for me? I didn't catch everything.
+[02:51] AGENT  : No problem. I checked for urgent appointments to evaluate your knee pain as soon as possible, but there are no open slots available through next Tuesday. Would you like me to look for openings after that? Or is there a specific date you prefer?
+[03:01] PATIENT: Okay, I understand. Yes, please look for openings after next Tuesday. I’m flexible, but I would prefer mornings if possible.
+[03:15] AGENT  : I check for morning and other urgent appointments after next two but there are still no open slots available. Would you like me to have someone from the clinic follow-up with you as soon as an appointment opens up?
+[03:23] PATIENT: That would be great, thank you! I’d appreciate it if someone could follow up with me when an appointment becomes available.
+[03:43] AGENT  : I've let the clinic know you need a morning appointment for your knee pain as soon as one opens up. Someone from our team will follow-up with you as soon as possible. Is there anything else I can help you with today?
+[03:50] PATIENT: No, that’s everything for now. I really appreciate your help! Thank you, and have a great day!
+[03:58] AGENT  : You're all set. The clinic will reach out when an appointment is available. Take care, and have a good day.
+[04:02] PATIENT: Thanks again! You too, take care!
