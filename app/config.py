@@ -34,7 +34,7 @@ OPENAI_STT_MODEL = os.getenv("OPENAI_STT_MODEL", "whisper-1")
 DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY", "")
 OPENAI_LLM_MODEL = os.getenv("OPENAI_LLM_MODEL", "gpt-4o-mini")
 OPENAI_TTS_MODEL = os.getenv("OPENAI_TTS_MODEL", "tts-1")
-OPENAI_TTS_VOICE = os.getenv("OPENAI_TTS_VOICE", "alloy")
+OPENAI_TTS_VOICE = os.getenv("OPENAI_TTS_VOICE", "onyx")  # male voice, matching the patient persona
 
 AGENT_NAME = os.getenv("AGENT_NAME", "pgai-voicebot-agent")
 

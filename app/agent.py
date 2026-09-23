@@ -131,7 +131,7 @@ def _make_tts():
     to force OpenAI."""
     if DEEPGRAM_API_KEY and os.getenv("TTS_PROVIDER", "deepgram") == "deepgram":
         from livekit.plugins import deepgram
-        voice = os.getenv("DEEPGRAM_TTS_MODEL", "aura-2-thalia-en")
+        voice = os.getenv("DEEPGRAM_TTS_MODEL", "aura-2-orion-en")
         log.info("TTS: Deepgram %s (streaming)", voice)
         return deepgram.TTS(model=voice)
     log.info("TTS: OpenAI %s / %s", OPENAI_TTS_MODEL, OPENAI_TTS_VOICE)
