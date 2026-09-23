@@ -24,6 +24,7 @@ Flow for one call:
 import asyncio
 import inspect
 import json
+import os
 import logging
 import time
 import wave
@@ -118,6 +119,23 @@ def _make_stt():
         )
     log.info("STT: OpenAI %s (batch)", OPENAI_STT_MODEL)
     return openai.STT(**kwargs)
+
+
+def _make_tts():
+    """Text-to-speech for our patient's voice.
+
+    Measured on a real call: OpenAI tts-1 took ~1.5 s to the first audio byte,
+    the single biggest part of our ~2.6 s reply delay. Deepgram Aura-2 is
+    built for phone agents and starts streaming audio in a few hundred ms, so
+    it is used whenever a Deepgram key is available. Set TTS_PROVIDER=openai
+    to force OpenAI."""
+    if DEEPGRAM_API_KEY and os.getenv("TTS_PROVIDER", "deepgram") == "deepgram":
+        from livekit.plugins import deepgram
+        voice = os.getenv("DEEPGRAM_TTS_MODEL", "aura-2-thalia-en")
+        log.info("TTS: Deepgram %s (streaming)", voice)
+        return deepgram.TTS(model=voice)
+    log.info("TTS: OpenAI %s / %s", OPENAI_TTS_MODEL, OPENAI_TTS_VOICE)
+    return openai.TTS(model=OPENAI_TTS_MODEL, voice=OPENAI_TTS_VOICE)
 
 
 def prewarm(proc):
@@ -263,7 +281,7 @@ async def entrypoint(ctx: JobContext):
     session = AgentSession(
         stt=_make_stt(),
         llm=openai.LLM(model=OPENAI_LLM_MODEL),
-        tts=openai.TTS(model=OPENAI_TTS_MODEL, voice=OPENAI_TTS_VOICE),
+        tts=_make_tts(),
         vad=ctx.proc.userdata["vad"],
     )
 
