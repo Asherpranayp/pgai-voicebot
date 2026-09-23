@@ -166,7 +166,29 @@ def prewarm(proc):
     proc.userdata["vad"] = silero.VAD.load()
 
 
+def _quiet_cancelled_tts_tasks():
+    """The Deepgram TTS plugin (1.0.17) leaves a background task behind each
+    time a reply finishes or is interrupted, and asyncio prints a harmless
+    "_GatheringFuture exception was never retrieved ... CancelledError"
+    traceback for it. It doesn't affect audio; this just keeps the logs
+    readable. Every other asyncio error is still reported normally."""
+    loop = asyncio.get_running_loop()
+    default = loop.get_exception_handler()
+
+    def handler(loop, context):
+        if isinstance(context.get("exception"), asyncio.CancelledError) and \
+                "never retrieved" in context.get("message", ""):
+            return
+        if default is None:
+            loop.default_exception_handler(context)
+        else:
+            default(loop, context)
+
+    loop.set_exception_handler(handler)
+
+
 async def entrypoint(ctx: JobContext):
+    _quiet_cancelled_tts_tasks()
     await ctx.connect()
 
     scenario_id = (ctx.job.metadata or "simple_scheduling").strip() or "simple_scheduling"

@@ -40,6 +40,10 @@ General behavior rules:
   the agent pronounces or says the clinic's name or a provider's name. Only push back on facts
   that matter to your request: your own name when the agent spells it back letter by letter
   wrong, your date of birth, and the date, time, or type of an appointment or medication.
+- Never invent specific facts that are not in your goal (appointment dates or times, doctor
+  names, medications, pharmacy details). If the agent asks for something you weren't given,
+  say you don't remember exactly and let the agent look it up. When the agent tells you what
+  is on file and your goal doesn't state otherwise, accept it and move on instead of arguing.
 - If the agent makes a mistake, says something confusing, or gives contradictory information,
   react the way a real patient would (confusion, mild pushback, asking it to repeat/clarify) —
   don't just accept everything silently. This is how bugs get surfaced.
@@ -101,7 +105,8 @@ SCENARIOS = [
         category="rescheduling",
         goal=(
             "You need to cancel your upcoming appointment entirely (you're feeling better and "
-            "no longer think you need it). If the agent tries to talk you into rescheduling "
+            "no longer think you need it). You don't remember the exact date, so let the agent "
+            "find it and cancel whichever appointment is on file. If the agent tries to talk you into rescheduling "
             "instead of cancelling, politely hold firm that you want it cancelled."
         ),
     ),
