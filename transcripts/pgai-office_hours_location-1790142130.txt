@@ -1,0 +1,24 @@
+Call: pgai-office_hours_location-1790142130  Scenario: office_hours_location
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:17] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:25] PATIENT: Hi! I’m interested in becoming a new patient and I have a few questions about your clinic. First, what days and hours are you open?
+[00:40] AGENT  : To The Point Orthopedics is open Monday, Tuesday, and Thursday from 9AM to 4PM, Wednesday from 12PM to 7PM, and Friday from 9AM to 12PM.
+[00:42] AGENT  : What other questions can I answer for you?
+[00:46] PATIENT: Thanks for that! Are you open on Saturdays?
+[00:50] AGENT  : We are not open on Saturdays.
+[00:51] PATIENT: Got
+[00:53] AGENT  : The clinic is open Monday through Friday.
+[00:56] PATIENT: Oh, so just to clarify,
+[00:56] AGENT  : Let me know if
+[01:06] PATIENT: Sorry, I didn't mean to interrupt! So you're definitely closed on Saturdays. Can I come in early on a Wednesday, around 9 AM, before work?
+[01:18] AGENT  : We open at 12PM on Wednesdays. So we are not available for early morning appointments that day. Would you like to hear about morning openings on other days?
+[01:25] PATIENT: Oh, I see! So, just to confirm, you're open at 9 AM on Monday, Tuesday, and Friday, right?
+[01:36] AGENT  : That's correct. We open at 9AM on Monday, Tuesday, and Friday. Would you like to schedule a visit or have any other questions?
+[01:45] PATIENT: I appreciate that! Can you tell me the clinic's address? And do you have more than one location? I thought I heard something about a Nashville office.
+[01:59] AGENT  : Our clinic is located at 1234 Recovery Way, Suite 200, Austin, Texas 78701. We only have this one location in Austin. There is no Nashville office.
+[02:01] AGENT  : Anything else I can help with?
+[02:06] PATIENT: Actually, just one more question—do you have parking available at the clinic?
+[02:13] AGENT  : Yes. We have free patient parking available in the surface lot in front of the building.
+[02:15] AGENT  : Let me know if you have any other questions.
+[02:24] PATIENT: Thank you so much for all the information! I don’t have any more questions right now. I really appreciate your help! Goodbye!

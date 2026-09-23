@@ -1,0 +1,177 @@
+{
+  "call_id": "pgai-frustrated_confused_patient-1790143385",
+  "scenario_id": "frustrated_confused_patient",
+  "started_at": 1790143385.8955307,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 8.82
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?",
+      "t": 17.49
+    },
+    {
+      "role": "patient",
+      "text": "Hi, um, I\u2019d like to schedule a checkup. I\u2019ve been having some ongoing hip pain, and it\u2019s starting to worry me.",
+      "t": 23.98
+    },
+    {
+      "role": "agent",
+      "text": "I understand. To get started, may I have your full name and date of birth?",
+      "t": 30.45
+    },
+    {
+      "role": "patient",
+      "text": "Sure, my name is Asher Pranay Palle, and my date of birth is February 16, 1995.",
+      "t": 38.69
+    },
+    {
+      "role": "agent",
+      "text": "Thanks, Asher.",
+      "t": 44.98
+    },
+    {
+      "role": "patient",
+      "text": "You're",
+      "t": 45.97
+    },
+    {
+      "role": "agent",
+      "text": "Just to confirm, you'd like to schedule a general checkup for ongoing hip pain. Does that sound right, or is there a different reason for your visit?",
+      "t": 52.05
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's right. A checkup for hip pain. Um, can you repeat that one more time? I just want to make sure I heard you correctly.",
+      "t": 60.43
+    },
+    {
+      "role": "agent",
+      "text": "Of course. Like to schedule a checkup for ongoing hip pain? Is that correct?",
+      "t": 67.73
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's correct. A checkup for the hip pain. Thank you for clarifying!",
+      "t": 73.02
+    },
+    {
+      "role": "agent",
+      "text": "No problem. Do you have a specific provider you'd like to see? Or are you open to anyone available?",
+      "t": 81.3
+    },
+    {
+      "role": "patient",
+      "text": "Um, I\u2019m not really sure about specific providers. I\u2019d be okay seeing anyone available, as long as they can help with my hip pain.",
+      "t": 89.88
+    },
+    {
+      "role": "agent",
+      "text": "Let me check the schedule for the next available appointment.",
+      "t": 94.04
+    },
+    {
+      "role": "agent",
+      "text": "Aren't any open appointments in the next week,",
+      "t": 96.88
+    },
+    {
+      "role": "agent",
+      "text": "Would you like me to look for the next available slot after September 29? Or is there a specific date range you prefer? One moment while I look for the next open times with any provider.",
+      "t": 107.83
+    },
+    {
+      "role": "patient",
+      "text": "Uh, yes, can you look for appointments after September 29? I don\u2019t have a specific date in mind, but I\u2019d like to get in as soon as possible.",
+      "t": 117.18
+    },
+    {
+      "role": "agent",
+      "text": "The soonest available appointment is Wednesday, September 30. Would you prefer a morning or afternoon time?",
+      "t": 125.81
+    },
+    {
+      "role": "patient",
+      "text": "Oh, um, could you say that date again for me? I think I missed it.",
+      "t": 130.27
+    },
+    {
+      "role": "agent",
+      "text": "The earliest available date is Wednesday, September thirtieth. Would you like a morning or afternoon slot?",
+      "t": 141.65
+    },
+    {
+      "role": "patient",
+      "text": "Okay, got it. Could I have the appointment in the morning, please? Thank you!",
+      "t": 146.78
+    },
+    {
+      "role": "agent",
+      "text": "Are morning openings at 9AM. 09:30AM, and 10AM. Would you like to book the 9AM slot with doctor Zidniew Lukowski?",
+      "t": 158.87
+    },
+    {
+      "role": "patient",
+      "text": "Um, wait, can you say that doctor's name again? I just want to make sure I got it right.",
+      "t": 165.12
+    },
+    {
+      "role": "agent",
+      "text": "Doctor's name is z Would you like to book the 9AM appointment with doctor Zee Bigniew Likosky?",
+      "t": 175.44
+    },
+    {
+      "role": "patient",
+      "text": "Oh, um, I think I might be getting it confused. Can you repeat the name one more time for me?",
+      "t": 181.06
+    },
+    {
+      "role": "agent",
+      "text": "Of course. The doctor's name is Zebniew Lukowski. Would you like to book the 9AM slot with him?",
+      "t": 189.84
+    },
+    {
+      "role": "patient",
+      "text": "Okay, I think I got it now. Yes, please book the 9AM slot with Doctor Zebniew Lukowski. Thank you!",
+      "t": 198.84
+    },
+    {
+      "role": "agent",
+      "text": "Your appointment is set for Wednesday, thirtieth at 9AM with doctor Zigniew Luka at Pivot Point Orthopedics. Please bring your photo ID, insurance card, a list of your current medications, and any imaging discs you have.",
+      "t": 217.04
+    },
+    {
+      "role": "agent",
+      "text": "Would you like me to send you a text message with these details?",
+      "t": 219.99
+    },
+    {
+      "role": "patient",
+      "text": "Yes, please! That would be really helpful. Thank you!",
+      "t": 224.49
+    },
+    {
+      "role": "agent",
+      "text": "You're all set, Asher. If you have any other questions or need to change your appointment, just let me know.",
+      "t": 233.01
+    },
+    {
+      "role": "patient",
+      "text": "Thank you so much for your help! I appreciate it. Have a great day!",
+      "t": 237.81
+    },
+    {
+      "role": "agent",
+      "text": "You're welcome. Take care, have a great day.",
+      "t": 243.31
+    },
+    {
+      "role": "patient",
+      "text": "You too! Goodbye!",
+      "t": 245.58
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "call_id": "pgai-scheduling_specific_doctor-1790141266",
+  "scenario_id": "scheduling_specific_doctor",
+  "started_at": 1790141267.5484226,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 11.32
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?",
+      "t": 18.28
+    },
+    {
+      "role": "patient",
+      "text": "Hi there! I'm looking to schedule a follow-up appointment. I'm hoping to see Dr. Whitfield. Is that possible?",
+      "t": 25.98
+    },
+    {
+      "role": "agent",
+      "text": "I can check on that for you. May I have your full name and date of birth?",
+      "t": 32.16
+    },
+    {
+      "role": "patient",
+      "text": "Sure! My name is Asher Pranay Palle, and my date of birth is February 16, 1995.",
+      "t": 40.83
+    },
+    {
+      "role": "agent",
+      "text": "Just to confirm, I have your name as Asher Palle and your date of birth as 02/16/1995. Is that correct? If so, could you please spell your first and last name for me?",
+      "t": 56.36
+    },
+    {
+      "role": "patient",
+      "text": "That's mostly right, but just to clarify, my full name is Asher Pranay Palle. And to spell it: A-S-H-E-R, P-R-A-N-A-Y, P-A-L-L-E.",
+      "t": 70.02
+    },
+    {
+      "role": "agent",
+      "text": "Thank you. I have your name as Asher Pranay Palle and your date of birth as 02/16/1995.",
+      "t": 82.44
+    },
+    {
+      "role": "agent",
+      "text": "Is that correct?",
+      "t": 82.91
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's correct! Thank you for confirming. So, can you check if Dr. Whitfield is available for a follow-up appointment?",
+      "t": 91.5
+    },
+    {
+      "role": "agent",
+      "text": "Doctor Whitfield does not have openings in the next week. But I do see several follow-up slots with doctor Du Hauser at Pivot Point Orthopedics. Would you like to book with doctor Hauser? Or would you prefer to wait for doctor Whitfield?",
+      "t": 116.29
+    },
+    {
+      "role": "patient",
+      "text": "Um, I appreciate the option. But I really wanted to see Dr. Whitfield specifically. Can you tell me how long I might need to wait for an appointment with him?",
+      "t": 125.35
+    },
+    {
+      "role": "agent",
+      "text": "I do not see any openings for doctor Whitfield in the next week. Would you like me to check for his next available appointment after September 29? Or would you like to try a different provider sooner?",
+      "t": 140.03
+    },
+    {
+      "role": "patient",
+      "text": "Yes, please check for Dr. Whitfield's next available appointment after September 29. I'd prefer to wait for him if I can.",
+      "t": 148.17
+    },
+    {
+      "role": "agent",
+      "text": "I checked. But there are still no available appointments with doctor Whitfield through the first week of October. Would you like me to keep searching further out, or would you like to be added to a wait list for his next opening?",
+      "t": 163.49
+    },
+    {
+      "role": "patient",
+      "text": "Um, could you put me on the waitlist for Dr. Whitfield? That way, if anything opens up, I'll be notified. Thank you!",
+      "t": 171.43
+    },
+    {
+      "role": "agent",
+      "text": "I'll make a note to add you to the wait list for doctor Whitfield's available follow-up appointment The office will contact you as soon as the slot opens up. Is there anything else I can help you with today?",
+      "t": 185.22
+    },
+    {
+      "role": "patient",
+      "text": "No, that's all for now. Thank you for your help! I really appreciate it.",
+      "t": 190.3
+    },
+    {
+      "role": "agent",
+      "text": "You're welcome. Have a great day.",
+      "t": 195.14
+    },
+    {
+      "role": "patient",
+      "text": "You too! Goodbye!",
+      "t": 197.35
+    }
+  ]
+}

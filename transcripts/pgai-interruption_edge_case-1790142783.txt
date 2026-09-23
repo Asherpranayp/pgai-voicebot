@@ -1,0 +1,33 @@
+Call: pgai-interruption_edge_case-1790142783  Scenario: interruption_edge_case
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:17] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:23] PATIENT: Hi, um, I’d like to schedule an appointment, please. I think I injured my knee, and it’s been bothering me.
+[00:30] AGENT  : I see you're calling from the number we have on file. Am I speaking with Asher?
+[00:35] PATIENT: Yes, that’s right. My name is Asher Pranay Palle.
+[00:39] AGENT  : Please provide your date of birth.
+[00:43] PATIENT: It's February 16, 1995.
+[01:00] AGENT  : Since you mentioned a knee injury that's been bothering you, would you say this is an urgent concern that needs prompt attention, or is it more of a routine issue? This helps me pick the right type of appointment for you.
+[01:11] PATIENT: Um, it’s been pretty bothersome, so I’d say it’s more urgent. I really need to get in as soon as possible. Actually, wait—what kind of appointments do you have available?
+[01:28] AGENT  : You already have an acute appointment booked for your knee with doctor Zigniew Lukoski. Tomorrow. At eight AM here at Pivot Point Orthopedics.
+[01:32] AGENT  : Would you like to keep this appointment, reschedule it, or cancel it?
+[01:40] PATIENT: Uh, let me think... I actually need to reschedule that. I have a conflict tomorrow. Um, could you tell me what other times are available?
+[01:52] AGENT  : You have three upcoming appointments on file. Which one would you like to reschedule Wednesday, September 23 at 8AM with doctor Zigbenew Lukowski, Wednesday,
+[01:56] AGENT  : September twenty third at 9AM with Aybrikor, Thursday,
+[02:03] AGENT  : September twenty fourth at 2PM with doctor Zebig Nyulikovsky. Please let me know which appointment you wanna move.
+[02:14] PATIENT: Oh, um, sorry, I got a little mixed up. I’d like to reschedule the one with Doctor Zigniew Lukoski on September 23rd at 8 AM. What other times do you have for that?
+[02:23] AGENT  : The next opening with Doctor. Zigmund Ulikovsky is Wednesday, September 23,
+[02:26] AGENT  : at 08:15AM at Nashville.
+[02:28] AGENT  : Would you like to take that, or do you wanna hear later times?
+[02:33] PATIENT: Um, I guess I’ll take that one at 8:15 AM. That works for me!
+[02:40] AGENT  : Can you tell me the reason you need to reschedule your appointment?
+[02:48] PATIENT: Sure, it’s because I have, um, a scheduling conflict with the original time. I can’t make it at 8 AM tomorrow.
+[03:01] AGENT  : You'd like to move your appointment with doctor Zabignu to Wednesday, September 23, at 08:15AM at Nashville. Is that correct?
+[03:12] PATIENT: Uh, actually, it’s Doctor Zigniew Lukoski, not Zabignu. But yes, that’s correct—Wednesday, September 23, at 8:15 AM.
+[03:27] AGENT  : Your appointment has been moved to Wednesday, September twenty third, at 08:15AM with doctor Zebigniew Lukowski in Nashville. Would you like me to send you a text message with these details?
+[03:33] PATIENT: Yes, please! A text with the appointment details would be really helpful. Thank you!
+[03:41] AGENT  : You'll get a text with your updated appointment details soon.
+[03:43] AGENT  : Is there anything else I can help you with today?
+[03:47] PATIENT: No, that’s all for now. Thanks for your help!
+[03:52] AGENT  : Take care and have a good night.
+[03:56] PATIENT: Thank you! You too, have a great night!

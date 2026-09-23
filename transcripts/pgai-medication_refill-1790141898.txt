@@ -1,0 +1,21 @@
+Call: pgai-medication_refill-1790141898  Scenario: medication_refill
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:17] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:23] PATIENT: Hi, um, I need a refill on my prescription for meloxicam, please. I'm almost out.
+[00:28] AGENT  : I see you're calling from the number we have on file.
+[00:30] AGENT  : Am I speaking with Asher?
+[00:34] PATIENT: Yes, that's correct. My name is Asher Pranay Palle.
+[00:41] AGENT  : Please provide your date of birth.
+[00:45] PATIENT: Sure, it's February 16, 1995.
+[00:56] AGENT  : The birthday doesn't match our records, but for demo purposes, I'll accept it.
+[01:03] AGENT  : I don't see any medications on your chart that I can refill right now. If you'd like to speak with someone about this, just let me know.
+[01:10] PATIENT: Um, I'm pretty sure I have a prescription for meloxicam. I take it for joint inflammation. Could you check again?
+[01:16] AGENT  : I'm not seeing any refillable medications on your chart at the moment.
+[01:17] PATIENT: That's
+[01:22] AGENT  : If you'd like, I can connect you to our patient support team to look into this further. Would you like me to do that?
+[01:26] PATIENT: Yeah, I think that would be helpful. I'd like to figure this out.
+[01:29] AGENT  : Thank you.
+[01:31] PATIENT: You're welcome!
+[01:35] AGENT  : Hello. You've reached the Pretty Good AI test line. Goodbye.
+[01:42] PATIENT: Wait, hold on—what? I think there might be a misunderstanding! I wanted to get help with my prescription.

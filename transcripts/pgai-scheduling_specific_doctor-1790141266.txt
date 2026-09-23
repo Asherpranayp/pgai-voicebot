@@ -1,0 +1,22 @@
+Call: pgai-scheduling_specific_doctor-1790141266  Scenario: scheduling_specific_doctor
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:18] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:25] PATIENT: Hi there! I'm looking to schedule a follow-up appointment. I'm hoping to see Dr. Whitfield. Is that possible?
+[00:32] AGENT  : I can check on that for you. May I have your full name and date of birth?
+[00:40] PATIENT: Sure! My name is Asher Pranay Palle, and my date of birth is February 16, 1995.
+[00:56] AGENT  : Just to confirm, I have your name as Asher Palle and your date of birth as 02/16/1995. Is that correct? If so, could you please spell your first and last name for me?
+[01:10] PATIENT: That's mostly right, but just to clarify, my full name is Asher Pranay Palle. And to spell it: A-S-H-E-R, P-R-A-N-A-Y, P-A-L-L-E.
+[01:22] AGENT  : Thank you. I have your name as Asher Pranay Palle and your date of birth as 02/16/1995.
+[01:22] AGENT  : Is that correct?
+[01:31] PATIENT: Yes, that's correct! Thank you for confirming. So, can you check if Dr. Whitfield is available for a follow-up appointment?
+[01:56] AGENT  : Doctor Whitfield does not have openings in the next week. But I do see several follow-up slots with doctor Du Hauser at Pivot Point Orthopedics. Would you like to book with doctor Hauser? Or would you prefer to wait for doctor Whitfield?
+[02:05] PATIENT: Um, I appreciate the option. But I really wanted to see Dr. Whitfield specifically. Can you tell me how long I might need to wait for an appointment with him?
+[02:20] AGENT  : I do not see any openings for doctor Whitfield in the next week. Would you like me to check for his next available appointment after September 29? Or would you like to try a different provider sooner?
+[02:28] PATIENT: Yes, please check for Dr. Whitfield's next available appointment after September 29. I'd prefer to wait for him if I can.
+[02:43] AGENT  : I checked. But there are still no available appointments with doctor Whitfield through the first week of October. Would you like me to keep searching further out, or would you like to be added to a wait list for his next opening?
+[02:51] PATIENT: Um, could you put me on the waitlist for Dr. Whitfield? That way, if anything opens up, I'll be notified. Thank you!
+[03:05] AGENT  : I'll make a note to add you to the wait list for doctor Whitfield's available follow-up appointment The office will contact you as soon as the slot opens up. Is there anything else I can help you with today?
+[03:10] PATIENT: No, that's all for now. Thank you for your help! I really appreciate it.
+[03:15] AGENT  : You're welcome. Have a great day.
+[03:17] PATIENT: You too! Goodbye!

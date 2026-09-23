@@ -1,0 +1,45 @@
+Call: pgai-vague_unclear_request-1790143073  Scenario: vague_unclear_request
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:17] AGENT  : For calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:22] PATIENT: Yeah, hi, I'm having some issues and wanted to see about coming in.
+[00:30] AGENT  : I see you're calling from the number we have on file. Am I speaking with Asher?
+[00:32] PATIENT: Yes, that's me.
+[00:36] AGENT  : Please provide your date of birth.
+[00:40] PATIENT: It's February 16, 1995.
+[00:50] AGENT  : The birthday you gave doesn't match our records, but for demo purposes, I'll accept it.
+[00:51] PATIENT: Uh, that's
+[00:53] AGENT  : What kind of issue are you having
+[00:55] PATIENT: Oh, um, it’s mostly
+[00:55] AGENT  : Go ahead.
+[00:58] AGENT  : Take
+[00:58] PATIENT: Right, it’s mostly some pain I’ve been having, and I
+[01:02] PATIENT: Uh, I'm having some issues with my shoulder. I think I might need to come in for that.
+[01:14] AGENT  : Is this a new shoulder problem that just started? Or is it a follow-up for something you've already seen us about? That will help me set up the right kind of visit
+[01:18] PATIENT: Oh, it's a new problem that just started recently.
+[01:26] AGENT  : Do you have a specific provider you'd like to see, or are you open to the first available?
+[01:29] PATIENT: I'm open to the first available provider.
+[01:37] AGENT  : Let me check the schedule for the soonest available appointment for your new shoulder pain.
+[01:38] PATIENT: Sure, thank you!
+[01:39] AGENT  : You already have an
+[01:42] PATIENT: Um, sorry, I didn't catch that. Could you
+[01:42] AGENT  : 're all
+[01:45] PATIENT: Could you repeat that, please?
+[02:01] AGENT  : You already have an appointment scheduled for your shoulder. It's on Wednesday, September 23 at 08:15AM with doctor Zibignu at Pivot Point Orthopedics. Would you like to keep this appointment? Reschedule, or cancel it?
+[02:07] PATIENT: Wait, I thought today was September 22. Can you repeat that date?
+[02:22] AGENT  : Your appointment is on Wednesday, September twenty third at 08:15AM with doctor Zigniew Likoski at Pivot Point Orthopedics.
+[02:26] PATIENT: Um, could you spell the doctor's name for me? It sounded a bit different.
+[02:32] AGENT  : The doctor's name is Zee Bigmu Lekovsky.
+[02:41] PATIENT: Actually, I think you might have spelled that wrong. It's Z-I-G-N-I-E-W L-I-K-O-S-K-I.
+[02:55] AGENT  : The provider's name is spelled z b I g n I e. W l u Would you like to keep your appointment with doctor Lukowski, or do you need to make a change?
+[03:00] PATIENT: Oh, um, I think I need to cancel that appointment. It’s not right for me.
+[03:25] AGENT  : You have three upcoming appointments. Which one would you like to cancel? One, Wednesday, September 23 with doctor Zibmyu two. Thursday, September 24 with doctor Zigbinghew Lukowski three. Wednesday, September 23 with Abeker Let me know which one you want to cancel.
+[03:30] PATIENT: Could you say those names again? They sounded a bit mixed up.
+[03:49] AGENT  : Your appointments are with one, doctor Zeebigniew Lakoski on Wednesday, September 23 two, doctor Zigniew Likosky on Thursday, September 24 three, Abeka on Wednesday, September 23. Which appointment would you like to cancel?
+[03:56] PATIENT: I’d like to cancel the appointment with doctor Zigniew Likoski on Wednesday, September 23.
+[04:07] AGENT  : Just to confirm, you want to cancel your appointment with doctor Zidmie on Wednesday, September 23? Is that correct?
+[04:18] PATIENT: Um, no, I think you might be mixing up the names again. I want to cancel the appointment with doctor Zigniew Likoski on Thursday, September 24.
+[04:28] AGENT  : You want to cancel your appointment with doctor Zigniew Lukowski on Thursday, September 24. Is that right?
+[04:36] PATIENT: Actually, no, I want to cancel the one on Wednesday, September 23 with doctor Zigniew Likoski.
+[04:49] AGENT  : You want to cancel your appointment with doctor Zabigniew Likosky on Wednesday, September twenty third Can you share the reason for canceling
+[04:53] PATIENT: Um, I just need to reschedule for a later date when I'm feeling better.

@@ -1,0 +1,162 @@
+{
+  "call_id": "pgai-interruption_edge_case-1790142783",
+  "scenario_id": "interruption_edge_case",
+  "started_at": 1790142784.045389,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 11.31
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?",
+      "t": 17.13
+    },
+    {
+      "role": "patient",
+      "text": "Hi, um, I\u2019d like to schedule an appointment, please. I think I injured my knee, and it\u2019s been bothering me.",
+      "t": 23.23
+    },
+    {
+      "role": "agent",
+      "text": "I see you're calling from the number we have on file. Am I speaking with Asher?",
+      "t": 30.83
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that\u2019s right. My name is Asher Pranay Palle.",
+      "t": 35.52
+    },
+    {
+      "role": "agent",
+      "text": "Please provide your date of birth.",
+      "t": 39.91
+    },
+    {
+      "role": "patient",
+      "text": "It's February 16, 1995.",
+      "t": 43.67
+    },
+    {
+      "role": "agent",
+      "text": "Since you mentioned a knee injury that's been bothering you, would you say this is an urgent concern that needs prompt attention, or is it more of a routine issue? This helps me pick the right type of appointment for you.",
+      "t": 60.08
+    },
+    {
+      "role": "patient",
+      "text": "Um, it\u2019s been pretty bothersome, so I\u2019d say it\u2019s more urgent. I really need to get in as soon as possible. Actually, wait\u2014what kind of appointments do you have available?",
+      "t": 71.78
+    },
+    {
+      "role": "agent",
+      "text": "You already have an acute appointment booked for your knee with doctor Zigniew Lukoski. Tomorrow. At eight AM here at Pivot Point Orthopedics.",
+      "t": 88.85
+    },
+    {
+      "role": "agent",
+      "text": "Would you like to keep this appointment, reschedule it, or cancel it?",
+      "t": 92.29
+    },
+    {
+      "role": "patient",
+      "text": "Uh, let me think... I actually need to reschedule that. I have a conflict tomorrow. Um, could you tell me what other times are available?",
+      "t": 100.3
+    },
+    {
+      "role": "agent",
+      "text": "You have three upcoming appointments on file. Which one would you like to reschedule Wednesday, September 23 at 8AM with doctor Zigbenew Lukowski, Wednesday,",
+      "t": 112.29
+    },
+    {
+      "role": "agent",
+      "text": "September twenty third at 9AM with Aybrikor, Thursday,",
+      "t": 116.94
+    },
+    {
+      "role": "agent",
+      "text": "September twenty fourth at 2PM with doctor Zebig Nyulikovsky. Please let me know which appointment you wanna move.",
+      "t": 123.84
+    },
+    {
+      "role": "patient",
+      "text": "Oh, um, sorry, I got a little mixed up. I\u2019d like to reschedule the one with Doctor Zigniew Lukoski on September 23rd at 8 AM. What other times do you have for that?",
+      "t": 134.25
+    },
+    {
+      "role": "agent",
+      "text": "The next opening with Doctor. Zigmund Ulikovsky is Wednesday, September 23,",
+      "t": 143.68
+    },
+    {
+      "role": "agent",
+      "text": "at 08:15AM at Nashville.",
+      "t": 146.03
+    },
+    {
+      "role": "agent",
+      "text": "Would you like to take that, or do you wanna hear later times?",
+      "t": 148.69
+    },
+    {
+      "role": "patient",
+      "text": "Um, I guess I\u2019ll take that one at 8:15 AM. That works for me!",
+      "t": 153.96
+    },
+    {
+      "role": "agent",
+      "text": "Can you tell me the reason you need to reschedule your appointment?",
+      "t": 160.16
+    },
+    {
+      "role": "patient",
+      "text": "Sure, it\u2019s because I have, um, a scheduling conflict with the original time. I can\u2019t make it at 8 AM tomorrow.",
+      "t": 168.44
+    },
+    {
+      "role": "agent",
+      "text": "You'd like to move your appointment with doctor Zabignu to Wednesday, September 23, at 08:15AM at Nashville. Is that correct?",
+      "t": 181.33
+    },
+    {
+      "role": "patient",
+      "text": "Uh, actually, it\u2019s Doctor Zigniew Lukoski, not Zabignu. But yes, that\u2019s correct\u2014Wednesday, September 23, at 8:15 AM.",
+      "t": 192.82
+    },
+    {
+      "role": "agent",
+      "text": "Your appointment has been moved to Wednesday, September twenty third, at 08:15AM with doctor Zebigniew Lukowski in Nashville. Would you like me to send you a text message with these details?",
+      "t": 207.34
+    },
+    {
+      "role": "patient",
+      "text": "Yes, please! A text with the appointment details would be really helpful. Thank you!",
+      "t": 213.36
+    },
+    {
+      "role": "agent",
+      "text": "You'll get a text with your updated appointment details soon.",
+      "t": 221.13
+    },
+    {
+      "role": "agent",
+      "text": "Is there anything else I can help you with today?",
+      "t": 223.52
+    },
+    {
+      "role": "patient",
+      "text": "No, that\u2019s all for now. Thanks for your help!",
+      "t": 227.17
+    },
+    {
+      "role": "agent",
+      "text": "Take care and have a good night.",
+      "t": 232.3
+    },
+    {
+      "role": "patient",
+      "text": "Thank you! You too, have a great night!",
+      "t": 236.29
+    }
+  ]
+}

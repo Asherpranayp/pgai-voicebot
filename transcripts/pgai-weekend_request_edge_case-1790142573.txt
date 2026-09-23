@@ -1,0 +1,27 @@
+Call: pgai-weekend_request_edge_case-1790142573  Scenario: weekend_request_edge_case
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:17] AGENT  : Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:27] PATIENT: Hi, this is Asher Pranay Palle. I'm looking to come in this Sunday at 10 AM for some knee pain I've been experiencing. Can you help me with that?
+[00:32] AGENT  : Please provide your date of birth.
+[00:37] PATIENT: Sure, it's February 16, 1995.
+[00:51] AGENT  : Can you please spell your first and last name to make sure I have it correct? Your date of birth is 02/16/1995. Is that right?
+[01:03] PATIENT: Yes, that's right. And my name is spelled A-S-H-E-R, P-R-A-N-A-Y, P-A-L-L-E.
+[01:18] AGENT  : Thank you. Just to confirm, your first name is Asher, and your last name is Pinay Palle. Your date of birth is 02/16/1995. Is that all correct?
+[01:29] PATIENT: Actually, my last name is Palle, not Pinay Palle. So it should be Asher Palle. My date of birth is still the same.
+[01:46] AGENT  : I have your phone number as nine two zero five five one five one three three. And your date of birth as 02/16/1995. Is that correct?
+[01:51] PATIENT: That’s right, but could you please double-check the phone number? I don't think that's my number.
+[01:58] AGENT  : No problem. Can you please tell me the phone number you have on file with us?
+[02:03] PATIENT: I don't have it right off the top of my head. Could you look it up for me?
+[02:14] AGENT  : I'm not able to look up your phone number directly. Could you please spell your first and last name one more time along with your date of birth? This will help me find your record.
+[02:25] PATIENT: Sure! It's A-S-H-E-R, P-R-A-N-A-Y, P-A-L-L-E, and my date of birth is February 16, 1995.
+[02:32] AGENT  : I'm unable to find your record in our system.
+[02:39] AGENT  : I can connect you to our patient support team for further help. Would you like to continue with me, or should I transfer you now?
+[02:47] PATIENT: Uh, let me think. I was really hoping to just schedule that appointment for Sunday at 10 AM. Can you still help me with that?
+[02:53] AGENT  : I can't schedule the appointment without
+[03:00] AGENT  : finding your record first. If you'd like, I can connect to our patient support team so they can assist you directly. Would you like me to transfer you now?
+[03:06] PATIENT: Yeah, I think that might be best. I just really need to get in for that knee pain. Thanks for your help!
+[03:07] AGENT  : Transferring you now. Thank you.
+[03:09] PATIENT: Thank you!
+[03:13] AGENT  : Hello. You've reached the Pretty Good AI test line. Goodbye.
+[03:15] PATIENT: Goodbye!

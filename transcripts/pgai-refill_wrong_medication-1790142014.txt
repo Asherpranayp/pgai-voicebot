@@ -1,0 +1,20 @@
+Call: pgai-refill_wrong_medication-1790142014  Scenario: refill_wrong_medication
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:13] AGENT  : Thanks for calling Pivot Point Orthopedics.
+[00:17] AGENT  : Part of Pranay How may I help you today?
+[00:23] PATIENT: Hi, um, I'm looking to refill a prescription. It's for, you know, the white pill for my shoulder.
+[00:29] AGENT  : I see you're calling from the number we have on file.
+[00:31] AGENT  : Am I speaking with Asher?
+[00:33] PATIENT: Yes, that's right.
+[00:38] AGENT  : Please provide your date of birth.
+[00:43] PATIENT: It's February 16, 1995.
+[00:57] AGENT  : I see any medications on your chart that I can refill right now.
+[01:00] AGENT  : If you'd like to speak with someone about this, just let me know.
+[01:08] PATIENT: Oh, um, I'm just hoping to refill that prescription for the white pill. Can you check if you have the details on that?
+[01:20] AGENT  : I checked your chart. But there aren't any medications listed for refill. If you want, I can connect you to our patient support team to help further. Would you like me to do that?
+[01:26] PATIENT: Um, that sounds good. Could you connect me with them? I really need that prescription refilled.
+[01:31] AGENT  : Transferring you now. Thank you.
+[01:33] PATIENT: Thank you!
+[01:37] AGENT  : Hello. You've reached the Pretty Good AI test line. Goodbye.
+[01:42] PATIENT: Wait, um, what just happened? I was trying to refill a prescription.

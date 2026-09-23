@@ -1,0 +1,36 @@
+Call: pgai-frustrated_confused_patient-1790143385  Scenario: frustrated_confused_patient
+
+[00:08] AGENT  : This call may be recorded for quality and training purposes.
+[00:17] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:23] PATIENT: Hi, um, I’d like to schedule a checkup. I’ve been having some ongoing hip pain, and it’s starting to worry me.
+[00:30] AGENT  : I understand. To get started, may I have your full name and date of birth?
+[00:38] PATIENT: Sure, my name is Asher Pranay Palle, and my date of birth is February 16, 1995.
+[00:44] AGENT  : Thanks, Asher.
+[00:45] PATIENT: You're
+[00:52] AGENT  : Just to confirm, you'd like to schedule a general checkup for ongoing hip pain. Does that sound right, or is there a different reason for your visit?
+[01:00] PATIENT: Yes, that's right. A checkup for hip pain. Um, can you repeat that one more time? I just want to make sure I heard you correctly.
+[01:07] AGENT  : Of course. Like to schedule a checkup for ongoing hip pain? Is that correct?
+[01:13] PATIENT: Yes, that's correct. A checkup for the hip pain. Thank you for clarifying!
+[01:21] AGENT  : No problem. Do you have a specific provider you'd like to see? Or are you open to anyone available?
+[01:29] PATIENT: Um, I’m not really sure about specific providers. I’d be okay seeing anyone available, as long as they can help with my hip pain.
+[01:34] AGENT  : Let me check the schedule for the next available appointment.
+[01:36] AGENT  : Aren't any open appointments in the next week,
+[01:47] AGENT  : Would you like me to look for the next available slot after September 29? Or is there a specific date range you prefer? One moment while I look for the next open times with any provider.
+[01:57] PATIENT: Uh, yes, can you look for appointments after September 29? I don’t have a specific date in mind, but I’d like to get in as soon as possible.
+[02:05] AGENT  : The soonest available appointment is Wednesday, September 30. Would you prefer a morning or afternoon time?
+[02:10] PATIENT: Oh, um, could you say that date again for me? I think I missed it.
+[02:21] AGENT  : The earliest available date is Wednesday, September thirtieth. Would you like a morning or afternoon slot?
+[02:26] PATIENT: Okay, got it. Could I have the appointment in the morning, please? Thank you!
+[02:38] AGENT  : Are morning openings at 9AM. 09:30AM, and 10AM. Would you like to book the 9AM slot with doctor Zidniew Lukowski?
+[02:45] PATIENT: Um, wait, can you say that doctor's name again? I just want to make sure I got it right.
+[02:55] AGENT  : Doctor's name is z Would you like to book the 9AM appointment with doctor Zee Bigniew Likosky?
+[03:01] PATIENT: Oh, um, I think I might be getting it confused. Can you repeat the name one more time for me?
+[03:09] AGENT  : Of course. The doctor's name is Zebniew Lukowski. Would you like to book the 9AM slot with him?
+[03:18] PATIENT: Okay, I think I got it now. Yes, please book the 9AM slot with Doctor Zebniew Lukowski. Thank you!
+[03:37] AGENT  : Your appointment is set for Wednesday, thirtieth at 9AM with doctor Zigniew Luka at Pivot Point Orthopedics. Please bring your photo ID, insurance card, a list of your current medications, and any imaging discs you have.
+[03:39] AGENT  : Would you like me to send you a text message with these details?
+[03:44] PATIENT: Yes, please! That would be really helpful. Thank you!
+[03:53] AGENT  : You're all set, Asher. If you have any other questions or need to change your appointment, just let me know.
+[03:57] PATIENT: Thank you so much for your help! I appreciate it. Have a great day!
+[04:03] AGENT  : You're welcome. Take care, have a great day.
+[04:05] PATIENT: You too! Goodbye!

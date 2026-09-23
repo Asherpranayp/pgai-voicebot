@@ -1,0 +1,17 @@
+Call: pgai-cancel_appointment-1790141784  Scenario: cancel_appointment
+
+[00:08] AGENT  : This call may be recorded for quality and training purposes.
+[00:16] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:24] PATIENT: Hi, um, I’d like to cancel my upcoming appointment, please. I'm feeling better and I don't think I need it anymore.
+[00:30] AGENT  : Can I get your full name and date of birth to look up your appointment?
+[00:38] PATIENT: Sure, my name is Asher Pranay Palle, and my date of birth is February 16, 1995.
+[00:53] AGENT  : You have an appointment with Doobie Hauser on Thursday, September 24. Just to confirm, is this the appointment you want to cancel?
+[01:07] PATIENT: Actually, I think you meant Thursday, September 24, 2026, since today's September 22, 2026. But yes, that's the appointment I want to cancel.
+[01:16] AGENT  : Thanks for confirming. You'd like to cancel your appointment with Dugie Hauser on Thursday, September 24.
+[01:17] AGENT  : Is that correct?
+[01:23] PATIENT: Um, I think you meant Doobie Hauser, right? But yes, I want to cancel that appointment.
+[01:32] AGENT  : Your appointment with Judy Hauser on Thursday, September twenty fourth has been canceled.
+[01:34] AGENT  : Is there anything else I can help you with today?
+[01:38] PATIENT: No, that's all for now. Thank you for your help!
+[01:43] AGENT  : You're all set. Have a great day.
+[01:45] PATIENT: Thanks! You too! Goodbye.

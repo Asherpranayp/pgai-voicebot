@@ -1,0 +1,117 @@
+{
+  "call_id": "pgai-office_hours_location-1790142130",
+  "scenario_id": "office_hours_location",
+  "started_at": 1790142131.8375156,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 11.17
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?",
+      "t": 17.09
+    },
+    {
+      "role": "patient",
+      "text": "Hi! I\u2019m interested in becoming a new patient and I have a few questions about your clinic. First, what days and hours are you open?",
+      "t": 25.68
+    },
+    {
+      "role": "agent",
+      "text": "To The Point Orthopedics is open Monday, Tuesday, and Thursday from 9AM to 4PM, Wednesday from 12PM to 7PM, and Friday from 9AM to 12PM.",
+      "t": 40.38
+    },
+    {
+      "role": "agent",
+      "text": "What other questions can I answer for you?",
+      "t": 42.65
+    },
+    {
+      "role": "patient",
+      "text": "Thanks for that! Are you open on Saturdays?",
+      "t": 46.38
+    },
+    {
+      "role": "agent",
+      "text": "We are not open on Saturdays.",
+      "t": 50.81
+    },
+    {
+      "role": "patient",
+      "text": "Got",
+      "t": 51.67
+    },
+    {
+      "role": "agent",
+      "text": "The clinic is open Monday through Friday.",
+      "t": 53.25
+    },
+    {
+      "role": "patient",
+      "text": "Oh, so just to clarify,",
+      "t": 56.04
+    },
+    {
+      "role": "agent",
+      "text": "Let me know if",
+      "t": 56.45
+    },
+    {
+      "role": "patient",
+      "text": "Sorry, I didn't mean to interrupt! So you're definitely closed on Saturdays. Can I come in early on a Wednesday, around 9 AM, before work?",
+      "t": 66.67
+    },
+    {
+      "role": "agent",
+      "text": "We open at 12PM on Wednesdays. So we are not available for early morning appointments that day. Would you like to hear about morning openings on other days?",
+      "t": 78.33
+    },
+    {
+      "role": "patient",
+      "text": "Oh, I see! So, just to confirm, you're open at 9 AM on Monday, Tuesday, and Friday, right?",
+      "t": 85.89
+    },
+    {
+      "role": "agent",
+      "text": "That's correct. We open at 9AM on Monday, Tuesday, and Friday. Would you like to schedule a visit or have any other questions?",
+      "t": 96.67
+    },
+    {
+      "role": "patient",
+      "text": "I appreciate that! Can you tell me the clinic's address? And do you have more than one location? I thought I heard something about a Nashville office.",
+      "t": 105.79
+    },
+    {
+      "role": "agent",
+      "text": "Our clinic is located at 1234 Recovery Way, Suite 200, Austin, Texas 78701. We only have this one location in Austin. There is no Nashville office.",
+      "t": 119.65
+    },
+    {
+      "role": "agent",
+      "text": "Anything else I can help with?",
+      "t": 121.47
+    },
+    {
+      "role": "patient",
+      "text": "Actually, just one more question\u2014do you have parking available at the clinic?",
+      "t": 126.79
+    },
+    {
+      "role": "agent",
+      "text": "Yes. We have free patient parking available in the surface lot in front of the building.",
+      "t": 133.79
+    },
+    {
+      "role": "agent",
+      "text": "Let me know if you have any other questions.",
+      "t": 135.58
+    },
+    {
+      "role": "patient",
+      "text": "Thank you so much for all the information! I don\u2019t have any more questions right now. I really appreciate your help! Goodbye!",
+      "t": 144.18
+    }
+  ]
+}

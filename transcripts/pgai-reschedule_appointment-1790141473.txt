@@ -1,0 +1,28 @@
+Call: pgai-reschedule_appointment-1790141473  Scenario: reschedule_appointment
+
+[00:08] AGENT  : This call may be recorded for quality and training purposes.
+[00:17] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:29] PATIENT: Hi, um, I need to reschedule my appointment. I have one booked this Thursday at 2 PM, but I've got a work conflict. Could we move it to sometime next week? Ideally after 3 PM?
+[00:37] AGENT  : I can help with that. May I have your full name and date of birth to look up your appointment?
+[00:48] PATIENT: Sure! My name is Asher Pranay Palle, and my date of birth is 1995-02-16.
+[01:07] AGENT  : Just to confirm, I have your name as Asher Palle, and your date of birth as February sixteenth nineteen ninety five. Is that correct? If not, could you please spell your first and last name for me?
+[01:18] PATIENT: That's not quite right. My full name is Asher Pranay Palle. That's A-S-H-E-R, P-R-A-N-A-Y, P-A-L-L-E.
+[01:30] AGENT  : See you have an appointment scheduled for Thursday, September 24,
+[01:40] AGENT  : at ten thirty AM with Judy Hauser at Nashville. Two two zero Athens Way. Is this the appointment you'd like to reschedule?
+[01:50] PATIENT: Um, actually, I think there's a mix-up. My appointment is on Thursday, September 24, but it's at 2 PM, not 10:30 AM. Could you check that for me?
+[02:07] AGENT  : The only appointment I see on file is for Thursday, September 24 at 10:30AM. Isn't a 2PM appointment listed. Would you like to reschedule the 10:30AM appointment to a later time next week after 3PM?
+[02:20] PATIENT: Oh, I see. That’s a bit confusing. Yes, let's go ahead and reschedule that 10:30 AM appointment to a time next week after 3 PM. What do you have available?
+[02:36] AGENT  : Let me check the schedule for available times next week after 3PM. The next opening I see is Tuesday, September 29 at 12PM in Nashville. Would you like to book that, or would you prefer a later time?
+[02:51] AGENT  : The next opening I see is Tuesday, September 29 at 12PM in Nashville with Dugie Hauser. There are also times at 12:45PM and 01:30PM that day. Would you like to try one of these, or should I look for something later in the afternoon?
+[02:57] PATIENT: Um, could you please check for something later in the afternoon? I'm looking for after 3 PM.
+[03:14] AGENT  : The latest opening I see next week is Tuesday, September 29 at 01:30PM in Nashville. There's nothing after 3PM that week. Would you like to try a different week or look for a later time on another day?
+[03:23] PATIENT: Oh, I see. Yeah, let’s look for a different week. Are there any available times after 3 PM next week or the week after?
+[03:46] AGENT  : The latest times I see for the week of October 6 are Tuesday at 01:30PM in Nashville, There are no openings after 3PM that week either. Would you like to try a different day of the week, or should I look even further out?
+[03:52] PATIENT: Hmm, let me think. Can you check for openings after 3 PM the week of October 13?
+[04:14] AGENT  : The latest opening for the week of October 13 is Tuesday, October 13, at 01:30PM in Nashville. There are still no slots after three p. M. Would you like to try a different week or look for a different day of the week?
+[04:21] PATIENT: Okay, sounds like my options are pretty limited. Can you check for availability after 3 PM the week of October 20?
+[04:41] AGENT  : The latest opening for the week of October 20 is Tuesday, October twenty at one thirty pm in Nashville, There are still no slots after three PM. Would you like to keep searching, or would you like help from the clinic team to find a later time?
+[04:50] PATIENT: It looks like all the options are before 3 PM. I would appreciate some help from the clinic team to find a later time. Can you connect me with them?
+[04:54] AGENT  : Transferring you now. Thank you.
+[04:56] PATIENT: Thanks for your help!
+[05:00] AGENT  : Hello. You've reached the Pretty Good AI test line. Goodbye.

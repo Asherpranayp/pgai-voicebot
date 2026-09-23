@@ -1,0 +1,97 @@
+{
+  "call_id": "pgai-refill_wrong_medication-1790142014",
+  "scenario_id": "refill_wrong_medication",
+  "started_at": 1790142015.4335127,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 11.15
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics.",
+      "t": 13.93
+    },
+    {
+      "role": "agent",
+      "text": "Part of Pranay How may I help you today?",
+      "t": 17.1
+    },
+    {
+      "role": "patient",
+      "text": "Hi, um, I'm looking to refill a prescription. It's for, you know, the white pill for my shoulder.",
+      "t": 23.56
+    },
+    {
+      "role": "agent",
+      "text": "I see you're calling from the number we have on file.",
+      "t": 29.63
+    },
+    {
+      "role": "agent",
+      "text": "Am I speaking with Asher?",
+      "t": 31.37
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's right.",
+      "t": 33.79
+    },
+    {
+      "role": "agent",
+      "text": "Please provide your date of birth.",
+      "t": 38.19
+    },
+    {
+      "role": "patient",
+      "text": "It's February 16, 1995.",
+      "t": 43.55
+    },
+    {
+      "role": "agent",
+      "text": "I see any medications on your chart that I can refill right now.",
+      "t": 57.71
+    },
+    {
+      "role": "agent",
+      "text": "If you'd like to speak with someone about this, just let me know.",
+      "t": 60.59
+    },
+    {
+      "role": "patient",
+      "text": "Oh, um, I'm just hoping to refill that prescription for the white pill. Can you check if you have the details on that?",
+      "t": 68.3
+    },
+    {
+      "role": "agent",
+      "text": "I checked your chart. But there aren't any medications listed for refill. If you want, I can connect you to our patient support team to help further. Would you like me to do that?",
+      "t": 80.91
+    },
+    {
+      "role": "patient",
+      "text": "Um, that sounds good. Could you connect me with them? I really need that prescription refilled.",
+      "t": 86.91
+    },
+    {
+      "role": "agent",
+      "text": "Transferring you now. Thank you.",
+      "t": 91.97
+    },
+    {
+      "role": "patient",
+      "text": "Thank you!",
+      "t": 93.57
+    },
+    {
+      "role": "agent",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye.",
+      "t": 97.83
+    },
+    {
+      "role": "patient",
+      "text": "Wait, um, what just happened? I was trying to refill a prescription.",
+      "t": 102.94
+    }
+  ]
+}
