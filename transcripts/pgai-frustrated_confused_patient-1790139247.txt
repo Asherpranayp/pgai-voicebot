@@ -1,0 +1,33 @@
+Call: pgai-frustrated_confused_patient-1790139247  Scenario: frustrated_confused_patient
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:17] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:25] PATIENT: Uh, hi there. I, um, I need to schedule a checkup for some ongoing hip pain I've been having. Can you help me with that?
+[00:31] AGENT  : I see you're calling from the number we have on file.
+[00:33] AGENT  : Am I speaking with Asher?
+[00:38] PATIENT: Yes, that's right. It's Asher Pranay Palle.
+[00:42] AGENT  : Please provide your date of birth.
+[00:46] PATIENT: It's February 16, 1995.
+[00:58] AGENT  : For your ongoing hip pain, would you like to schedule a general office visit or is this more of an urgent concern that needs Prab's attention?
+[01:11] PATIENT: Um, I think it's more of a general checkup. It's been bothering me for a while, but I don't think it's urgent. Can you just, uh, repeat who that doctor is? I didn't catch the name.
+[01:22] AGENT  : I haven't mentioned a specific doctor yet. Right now, I'm confirming your visit reason as a general office visit for your ongoing hip pain.
+[01:23] AGENT  : Does that sound right?
+[01:31] PATIENT: Uh, yeah, that sounds right. A general office visit for my hip pain. But, um, how soon can I get in?
+[01:39] AGENT  : Do you have a specific provider you'd like to see, or are you open to the first available?
+[01:47] PATIENT: Um, I don’t really know any specific providers. I’m, uh, open to the first available one. Could you tell me when that might be?
+[02:09] AGENT  : You already have an office visit booked for Thursday, September 24, at 2PM with doctor Zeebigniew Lokoski. At Pivot Point Orthopedics. Since you can't have two of the same type, would you like to keep this appointment? Reschedule it, or cancel it?
+[02:17] PATIENT: Wait, um, can you repeat that date? I just want to make sure I got it right. Did you say Thursday, September 24?
+[02:28] AGENT  : Yes. Appointment is Thursday, September 24 at 2PM with doctor Zigniew Likoski.
+[02:34] PATIENT: Oh, um, I think you said the last name wrong. It sounded a bit different. Can you spell it for me?
+[02:48] AGENT  : I'm not able to spell the provider's name. But your appointment is with doctor. If you need more details or wanna change your appointment, just let me know.
+[02:56] PATIENT: Oh, I see. Uh, I think I’d like to keep that appointment for Thursday, September 24, at 2 PM. Thank you for confirming it.
+[03:04] AGENT  : You're all set for Thursday, September 24 at 2PM with doctor Zidniew Lukosky.
+[03:05] PATIENT: Um,
+[03:07] AGENT  : If you need to reschedule or have any other questions, just let me know.
+[03:16] PATIENT: Okay, um, just to be clear, is it with doctor Zigniew or Lukosky? I just want to make sure I have the name right for when I show up.
+[03:24] AGENT  : Your appointment is with doctor Sig Bigniew Lukowski. That's the full name.
+[03:35] PATIENT: Oh, okay, I think I got it now. Thank you for clarifying. So, it's with doctor Sig Bigniew Lukowski, right? Alright, I appreciate your help.
+[03:45] AGENT  : Your appointment is with doctor Zibigniew Lukowski. If you have any other questions or need help before your visit, just let me know.
+[03:54] PATIENT: Um, okay, I got it. Thank you for your patience with me. I don’t think I have any more questions right now. You’ve been really helpful.
+[04:01] AGENT  : Glad I could help. Your appointment is all set. Have a great day.
+[04:06] PATIENT: Thank you! I appreciate it. You too, have a great day! Goodbye!
