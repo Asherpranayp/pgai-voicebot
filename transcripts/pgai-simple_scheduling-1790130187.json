@@ -1,0 +1,172 @@
+{
+  "call_id": "pgai-simple_scheduling-1790130187",
+  "scenario_id": "simple_scheduling",
+  "started_at": 1790130188.7323117,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 11.22
+    },
+    {
+      "role": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2.",
+      "t": 13.91
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics.",
+      "t": 15.63
+    },
+    {
+      "role": "agent",
+      "text": "part of pretty good AI.",
+      "t": 17.5
+    },
+    {
+      "role": "agent",
+      "text": "How may I help you today?",
+      "t": 18.07
+    },
+    {
+      "role": "patient",
+      "text": "Hi, I\u2019d like to schedule a new-patient appointment. I've been having some knee pain that started about a week ago. I'm pretty flexible on days, but I prefer mornings if possible.",
+      "t": 29.84
+    },
+    {
+      "role": "agent",
+      "text": "I see you're calling from the number we have on file.",
+      "t": 37.37
+    },
+    {
+      "role": "agent",
+      "text": "I'm speaking with Asher",
+      "t": 38.11
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's right. Asher Pranay Palle.",
+      "t": 44.02
+    },
+    {
+      "role": "agent",
+      "text": "Please provide your date of birth.",
+      "t": 49.29
+    },
+    {
+      "role": "patient",
+      "text": "Sure, it's February 16, 1995.",
+      "t": 54.41
+    },
+    {
+      "role": "agent",
+      "text": "Just to confirm, you'd like to schedule a new patient consultation for your knee pain.",
+      "t": 64.34
+    },
+    {
+      "role": "agent",
+      "text": "Is that correct?",
+      "t": 64.91
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's correct. I\u2019d like to get in as soon as possible.",
+      "t": 70.14
+    },
+    {
+      "role": "agent",
+      "text": "You already have a new patient appointment booked with Dr. Bricker tomorrow Wednesday, September 23rd at 9 a.m.",
+      "t": 94.83
+    },
+    {
+      "role": "agent",
+      "text": "at Pivot Point Orthopedics.",
+      "t": 98.01
+    },
+    {
+      "role": "agent",
+      "text": "Would you like to keep this appointment, reschedule it?",
+      "t": 100.15
+    },
+    {
+      "role": "agent",
+      "text": "or cancel it.",
+      "t": 100.76
+    },
+    {
+      "role": "patient",
+      "text": "I\u2019d like to keep the appointment for tomorrow.",
+      "t": 105.16
+    },
+    {
+      "role": "agent",
+      "text": "You're all set for your appointment tomorrow at 9 a.m. with Dr. Brecker at Tivitt Point Orthopedics.",
+      "t": 115.06
+    },
+    {
+      "role": "agent",
+      "text": "Is there anything else I can help you with today?",
+      "t": 116.38
+    },
+    {
+      "role": "patient",
+      "text": "Actually, I think you might have mispronounced the clinic name. It\u2019s \u201cPivot Point Orthopedics,\u201d not \"Tivitt Point.\" Can you confirm that the appointment is still with Dr. Bricker at Pivot Point?",
+      "t": 129.03
+    },
+    {
+      "role": "agent",
+      "text": "Your appointment is with Dr. Bricker at Tivitt Point Orthopedics.",
+      "t": 140.0
+    },
+    {
+      "role": "agent",
+      "text": "located at 1234 Recovery Way, Suite 200, Austin.",
+      "t": 142.94
+    },
+    {
+      "role": "agent",
+      "text": "The clinic name is Pivot Point Orthopedics.",
+      "t": 144.88
+    },
+    {
+      "role": "agent",
+      "text": "Let me know if you need anything else.",
+      "t": 146.17
+    },
+    {
+      "role": "patient",
+      "text": "Alright, I appreciate your help! Just to confirm, my appointment is still with Dr. Bricker tomorrow at 9 a.m. at Pivot Point Orthopedics, right?",
+      "t": 156.85
+    },
+    {
+      "role": "agent",
+      "text": "That's correct.",
+      "t": 165.39
+    },
+    {
+      "role": "agent",
+      "text": "Your appointment is tomorrow at 9 a.m. with Dr. Bricker at Pivot Point Orthopedics.",
+      "t": 167.9
+    },
+    {
+      "role": "patient",
+      "text": "Great, thank you for",
+      "t": 167.95
+    },
+    {
+      "role": "patient",
+      "text": "Great, thank you for confirming. That's all I needed. Have a good day!",
+      "t": 173.77
+    },
+    {
+      "role": "agent",
+      "text": "You too. Take care.",
+      "t": 178.74
+    },
+    {
+      "role": "patient",
+      "text": "Thanks, you too! Goodbye!",
+      "t": 181.44
+    }
+  ]
+}

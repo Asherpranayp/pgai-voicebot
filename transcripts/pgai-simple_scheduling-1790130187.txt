@@ -1,0 +1,35 @@
+Call: pgai-simple_scheduling-1790130187  Scenario: simple_scheduling
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:13] AGENT  : Para Español, oprima el 2.
+[00:15] AGENT  : Thanks for calling Pivot Point Orthopedics.
+[00:17] AGENT  : part of pretty good AI.
+[00:18] AGENT  : How may I help you today?
+[00:29] PATIENT: Hi, I’d like to schedule a new-patient appointment. I've been having some knee pain that started about a week ago. I'm pretty flexible on days, but I prefer mornings if possible.
+[00:37] AGENT  : I see you're calling from the number we have on file.
+[00:38] AGENT  : I'm speaking with Asher
+[00:44] PATIENT: Yes, that's right. Asher Pranay Palle.
+[00:49] AGENT  : Please provide your date of birth.
+[00:54] PATIENT: Sure, it's February 16, 1995.
+[01:04] AGENT  : Just to confirm, you'd like to schedule a new patient consultation for your knee pain.
+[01:04] AGENT  : Is that correct?
+[01:10] PATIENT: Yes, that's correct. I’d like to get in as soon as possible.
+[01:34] AGENT  : You already have a new patient appointment booked with Dr. Bricker tomorrow Wednesday, September 23rd at 9 a.m.
+[01:38] AGENT  : at Pivot Point Orthopedics.
+[01:40] AGENT  : Would you like to keep this appointment, reschedule it?
+[01:40] AGENT  : or cancel it.
+[01:45] PATIENT: I’d like to keep the appointment for tomorrow.
+[01:55] AGENT  : You're all set for your appointment tomorrow at 9 a.m. with Dr. Brecker at Tivitt Point Orthopedics.
+[01:56] AGENT  : Is there anything else I can help you with today?
+[02:09] PATIENT: Actually, I think you might have mispronounced the clinic name. It’s “Pivot Point Orthopedics,” not "Tivitt Point." Can you confirm that the appointment is still with Dr. Bricker at Pivot Point?
+[02:20] AGENT  : Your appointment is with Dr. Bricker at Tivitt Point Orthopedics.
+[02:22] AGENT  : located at 1234 Recovery Way, Suite 200, Austin.
+[02:24] AGENT  : The clinic name is Pivot Point Orthopedics.
+[02:26] AGENT  : Let me know if you need anything else.
+[02:36] PATIENT: Alright, I appreciate your help! Just to confirm, my appointment is still with Dr. Bricker tomorrow at 9 a.m. at Pivot Point Orthopedics, right?
+[02:45] AGENT  : That's correct.
+[02:47] AGENT  : Your appointment is tomorrow at 9 a.m. with Dr. Bricker at Pivot Point Orthopedics.
+[02:47] PATIENT: Great, thank you for
+[02:53] PATIENT: Great, thank you for confirming. That's all I needed. Have a good day!
+[02:58] AGENT  : You too. Take care.
+[03:01] PATIENT: Thanks, you too! Goodbye!
