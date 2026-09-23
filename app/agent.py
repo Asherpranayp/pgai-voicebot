@@ -138,6 +138,27 @@ def _make_tts():
     return openai.TTS(model=OPENAI_TTS_MODEL, voice=OPENAI_TTS_VOICE)
 
 
+def _turn_taking_options() -> dict:
+    """Turn-taking tuned for talking to another voice bot over a phone line.
+
+    Heard on a real call: the clinic agent often speaks in two chunks with a
+    short pause between them ("That's correct." ... "Your appointment is...").
+    With LiveKit's defaults our patient started answering in that pause, got
+    cut off when the agent kept talking, and then repeated itself ("Great,
+    thank you for-- Great, thank you for confirming"). So we wait a little
+    longer before deciding the agent is done, and only let the agent
+    interrupt us with real speech (at least 2 words / 0.8 s), not a short
+    noise or a trailing syllable. Only passed if this LiveKit version
+    supports the option."""
+    wanted = {
+        "min_endpointing_delay": 0.8,     # default 0.5 s
+        "min_interruption_duration": 0.8, # default 0.5 s
+        "min_interruption_words": 2,      # default 0
+    }
+    supported = inspect.signature(AgentSession.__init__).parameters
+    return {k: v for k, v in wanted.items() if k in supported}
+
+
 def prewarm(proc):
     # Load the Silero VAD model once per worker process, before any job is
     # assigned, instead of inside the call entrypoint (loading it there
@@ -283,6 +304,7 @@ async def entrypoint(ctx: JobContext):
         llm=openai.LLM(model=OPENAI_LLM_MODEL),
         tts=_make_tts(),
         vad=ctx.proc.userdata["vad"],
+        **_turn_taking_options(),
     )
 
     # Per-turn latency of OUR side, from LiveKit's built-in metrics:
