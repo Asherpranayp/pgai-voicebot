@@ -22,6 +22,8 @@ Flow for one call:
      written to WAV, then mixed down to a single MP3 once the call ends.
 """
 import asyncio
+import inspect
+import json
 import logging
 import time
 import wave
@@ -35,6 +37,7 @@ from livekit.plugins import openai, silero
 
 from app.config import (
     AGENT_NAME,
+    DEEPGRAM_API_KEY,
     LIVEKIT_API_KEY,
     LIVEKIT_API_SECRET,
     LIVEKIT_URL,
@@ -42,6 +45,7 @@ from app.config import (
     OPENAI_STT_MODEL,
     OPENAI_TTS_MODEL,
     OPENAI_TTS_VOICE,
+    PATIENT_NAME,
     SIP_TRUNK_ID,
     TARGET_NUMBER,
 )
@@ -88,6 +92,34 @@ async def _record_track_to_wav(track: rtc.Track, out_path: Path, stop_event: asy
         await stream.aclose()
 
 
+def _make_stt():
+    """Speech-to-text for the clinic's side of the call.
+
+    Default: OpenAI Whisper (batch). LiveKit has to wait for VAD to decide the
+    agent stopped talking, then upload the whole clip, so every reply starts
+    with an extra STT round trip. If DEEPGRAM_API_KEY is set we use Deepgram
+    Nova-3 streaming instead, which transcribes while the agent is still
+    speaking and cuts that wait. Either way we hint the clinic name so it is
+    not misheard (Whisper once turned "Pivot Point" into "Tivitt Point")."""
+    if DEEPGRAM_API_KEY:
+        from livekit.plugins import deepgram
+        kwargs = {"model": "nova-3", "language": "en-US"}
+        params = inspect.signature(deepgram.STT.__init__).parameters
+        if "keyterms" in params:
+            kwargs["keyterms"] = ["Pivot Point Orthopedics", PATIENT_NAME]
+        log.info("STT: Deepgram nova-3 (streaming)")
+        return deepgram.STT(**kwargs)
+
+    kwargs = {"model": OPENAI_STT_MODEL, "language": "en"}
+    if "prompt" in inspect.signature(openai.STT.__init__).parameters:
+        kwargs["prompt"] = (
+            "Phone call with Pivot Point Orthopedics, an orthopedic clinic. "
+            f"The patient is {PATIENT_NAME}."
+        )
+    log.info("STT: OpenAI %s (batch)", OPENAI_STT_MODEL)
+    return openai.STT(**kwargs)
+
+
 def prewarm(proc):
     # Load the Silero VAD model once per worker process, before any job is
     # assigned, instead of inside the call entrypoint (loading it there
@@ -111,6 +143,7 @@ async def entrypoint(ctx: JobContext):
     patient_wav = RECORDINGS_DIR / f"{call_id}_patient.wav"
 
     finalized = False
+    finalize_hooks: list = []  # extra save steps registered later (e.g. latency)
 
     async def finalize(*_):
         """Stop recording, save the transcript, and mix both sides into one
@@ -127,6 +160,11 @@ async def entrypoint(ctx: JobContext):
                 t.cancel()
         json_path, txt_path = transcript.save()
         log.info("Transcript saved: %s (%d turns)", txt_path, len(transcript.turns))
+        for hook in finalize_hooks:
+            try:
+                hook()
+            except Exception:
+                log.exception("finalize hook failed")
 
         wavs = [w for w in (agent_wav, patient_wav) if w.exists()]
         if not wavs:
@@ -223,11 +261,40 @@ async def entrypoint(ctx: JobContext):
     # --- Step 2: start the STT -> LLM -> TTS pipeline on the live call. ---
     log.info("Step 2: starting AgentSession")
     session = AgentSession(
-        stt=openai.STT(model=OPENAI_STT_MODEL),
+        stt=_make_stt(),
         llm=openai.LLM(model=OPENAI_LLM_MODEL),
         tts=openai.TTS(model=OPENAI_TTS_MODEL, voice=OPENAI_TTS_VOICE),
         vad=ctx.proc.userdata["vad"],
     )
+
+    # Per-turn latency of OUR side, from LiveKit's built-in metrics:
+    # end-of-utterance delay (how long after the agent stopped talking we
+    # decided it was our turn), LLM time-to-first-token, and TTS
+    # time-to-first-byte. Their sum is roughly how long the clinic waits for
+    # our patient to start answering. Saved next to the transcript.
+    latency = {"eou_delay": [], "llm_ttft": [], "tts_ttfb": []}
+
+    @session.on("metrics_collected")
+    def on_metrics(event):
+        m = event.metrics
+        name = type(m).__name__
+        if name == "EOUMetrics":
+            latency["eou_delay"].append(round(getattr(m, "end_of_utterance_delay", 0.0), 3))
+        elif name == "LLMMetrics" and getattr(m, "ttft", -1) >= 0:
+            latency["llm_ttft"].append(round(m.ttft, 3))
+        elif name == "TTSMetrics" and getattr(m, "ttfb", -1) >= 0:
+            latency["tts_ttfb"].append(round(m.ttfb, 3))
+
+    def _save_latency():
+        avg = {k: round(sum(v) / len(v), 3) if v else None for k, v in latency.items()}
+        parts = [a for a in avg.values() if a is not None]
+        avg["est_response_delay"] = round(sum(parts), 3) if parts else None
+        out = Path(__file__).resolve().parent.parent / "transcripts" / f"{call_id}.latency.json"
+        out.write_text(json.dumps({"averages_sec": avg, "per_turn_sec": latency}, indent=2))
+        log.info("Latency (avg s): end-of-turn %s + LLM %s + TTS %s = ~%s before each patient reply",
+                 avg["eou_delay"], avg["llm_ttft"], avg["tts_ttfb"], avg["est_response_delay"])
+
+    finalize_hooks.append(_save_latency)
 
     @session.on("conversation_item_added")
     def on_conversation_item_added(event):

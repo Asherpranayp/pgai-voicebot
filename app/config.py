@@ -28,6 +28,10 @@ OPENAI_API_KEY = _require("OPENAI_API_KEY")
 # Pipeline mode: separate STT / LLM / TTS models, never a realtime/speech-to-speech
 # model (see ARCHITECTURE.md for why this is a hard requirement here, not a choice).
 OPENAI_STT_MODEL = os.getenv("OPENAI_STT_MODEL", "whisper-1")
+# Optional: if set, speech-to-text uses Deepgram's streaming Nova-3 model instead of
+# Whisper. Streaming STT has the transcript ready the moment the other side stops
+# talking, which removes most of the pause before each reply (see ARCHITECTURE.md).
+DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY", "")
 OPENAI_LLM_MODEL = os.getenv("OPENAI_LLM_MODEL", "gpt-4o-mini")
 OPENAI_TTS_MODEL = os.getenv("OPENAI_TTS_MODEL", "tts-1")
 OPENAI_TTS_VOICE = os.getenv("OPENAI_TTS_VOICE", "alloy")
