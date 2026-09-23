@@ -1,0 +1,87 @@
+{
+  "call_id": "pgai-medication_refill-1790135801",
+  "scenario_id": "medication_refill",
+  "started_at": 1790135802.849029,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 11.34
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. May I help you today?",
+      "t": 17.89
+    },
+    {
+      "role": "patient",
+      "text": "Hi there! I\u2019m calling to get a refill on my prescription for meloxicam. I'm almost out and need it sent to my usual pharmacy.",
+      "t": 26.01
+    },
+    {
+      "role": "agent",
+      "text": "I see your from the number we have on file. Am I speaking with Asher?",
+      "t": 32.86
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's right. My name is Asher Pranay Palle.",
+      "t": 36.91
+    },
+    {
+      "role": "agent",
+      "text": "Thanks, Asher. Please provide your date of birth.",
+      "t": 42.3
+    },
+    {
+      "role": "patient",
+      "text": "Sure, it's February 16, 1995.",
+      "t": 46.89
+    },
+    {
+      "role": "agent",
+      "text": "I don't see any medications on your chart that I can refill right now.",
+      "t": 59.26
+    },
+    {
+      "role": "patient",
+      "text": "Oh,",
+      "t": 60.07
+    },
+    {
+      "role": "agent",
+      "text": "If you'd like to speak with someone about this,",
+      "t": 61.47
+    },
+    {
+      "role": "agent",
+      "text": "just let me know.",
+      "t": 62.81
+    },
+    {
+      "role": "patient",
+      "text": "Um, could you check again? I\u2019ve been taking meloxicam for joint inflammation for a while now, and I really need the refill.",
+      "t": 70.56
+    },
+    {
+      "role": "agent",
+      "text": "I'm not able to see any refillable medication on your chart at this time. Would you like me to connect you to our patient support team to help with this?",
+      "t": 80.57
+    },
+    {
+      "role": "patient",
+      "text": "Yes, please. I\u2019d appreciate that. I just want to make sure I can get my prescription sorted out.",
+      "t": 86.93
+    },
+    {
+      "role": "agent",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye.",
+      "t": 97.76
+    },
+    {
+      "role": "patient",
+      "text": "Wait, I think I got disconnected. I really need assistance with my prescription. Can I be connected to someone who can help?",
+      "t": 105.41
+    }
+  ]
+}
