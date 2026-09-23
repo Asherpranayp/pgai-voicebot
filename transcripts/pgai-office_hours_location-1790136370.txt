@@ -1,0 +1,10 @@
+Call: pgai-office_hours_location-1790136370  Scenario: office_hours_location
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:18] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:24] PATIENT: Hi, um, I’m just looking for some basic information. Can you tell me what days and hours the clinic is open?
+[00:41] AGENT  : Pivot Point Orthopedics is open Monday, Tuesday, and Thursday. From 9AM to 4PM, Wednesday from 12PM to 7PM, and Friday from 9AM to 12PM, Is there anything else you'd like to know?
+[00:46] PATIENT: Thanks for that. Can you also tell me the address or locations of the clinic?
+[00:59] AGENT  : The clinic is located at 1234 Recovery Way, suite two hundred, Austin, Would you like directions or any other details about the location?
+[01:04] PATIENT: No, that’s okay. I just wanted to get the address. Thanks for your help!
+[01:12] AGENT  : You're welcome. You have any other questions, feel free to call us anytime. Have a great day.

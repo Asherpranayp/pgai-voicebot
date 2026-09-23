@@ -1,0 +1,47 @@
+{
+  "call_id": "pgai-office_hours_location-1790136370",
+  "scenario_id": "office_hours_location",
+  "started_at": 1790136371.613825,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 11.58
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?",
+      "t": 18.3
+    },
+    {
+      "role": "patient",
+      "text": "Hi, um, I\u2019m just looking for some basic information. Can you tell me what days and hours the clinic is open?",
+      "t": 24.59
+    },
+    {
+      "role": "agent",
+      "text": "Pivot Point Orthopedics is open Monday, Tuesday, and Thursday. From 9AM to 4PM, Wednesday from 12PM to 7PM, and Friday from 9AM to 12PM, Is there anything else you'd like to know?",
+      "t": 41.18
+    },
+    {
+      "role": "patient",
+      "text": "Thanks for that. Can you also tell me the address or locations of the clinic?",
+      "t": 46.16
+    },
+    {
+      "role": "agent",
+      "text": "The clinic is located at 1234 Recovery Way, suite two hundred, Austin, Would you like directions or any other details about the location?",
+      "t": 59.35
+    },
+    {
+      "role": "patient",
+      "text": "No, that\u2019s okay. I just wanted to get the address. Thanks for your help!",
+      "t": 64.57
+    },
+    {
+      "role": "agent",
+      "text": "You're welcome. You have any other questions, feel free to call us anytime. Have a great day.",
+      "t": 72.76
+    }
+  ]
+}
