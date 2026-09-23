@@ -1,0 +1,29 @@
+Call: pgai-simple_scheduling-1790135314  Scenario: simple_scheduling
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:17] AGENT  : Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:25] PATIENT: Hi, I’d like to schedule a new-patient appointment. I’ve been experiencing some knee pain that started about a week ago.
+[00:33] AGENT  : I see you're calling from the number we have on file. Am I speaking with Asher?
+[00:37] PATIENT: Yes, that's correct. It's Asher Palle.
+[00:44] AGENT  : Please provide your date of birth.
+[00:48] PATIENT: My date of birth is February 16, 1995.
+[01:01] AGENT  : Just to confirm, you'd like to schedule a new patient consultation for knee pain that's started about a week ago. Is that right?
+[01:06] PATIENT: Yes, that's right. I’d like to get in as soon as possible.
+[01:21] AGENT  : The soonest available appointment is tomorrow. Wednesday, September 23 with Avericker. At Pivot Point Orthopedics.
+[01:25] AGENT  : Would you like the 9AM slot? Or do you prefer a later time?
+[01:29] PATIENT: I prefer the 9 AM slot, that works for me.
+[01:38] AGENT  : You're all set for tomorrow, Wednesday, September 23 at 9AM with Abeker. At Pivot Point Orthopedics.
+[01:40] AGENT  : Is there anything else I can help you with?
+[01:42] PATIENT: No, that’s everything
+[01:43] AGENT  : Your appointment is set
+[01:47] PATIENT: Great, thank you! I appreciate your help.
+[01:54] AGENT  : You're all set for tomorrow at 9AM with A Bricker at Pivot Point Orthopedics.
+[02:02] AGENT  : Please bring your photo ID, insurance card, a list of your medications, and any imaging discs if you have them.
+[02:05] AGENT  : Would you like a text message with your appointment details?
+[02:08] PATIENT: Yes, that would be helpful. Thank you!
+[02:17] AGENT  : You should get a text with your appointment details soon. Have any other questions, just let us know.
+[02:21] PATIENT: I will, thanks again for your help! Have a great day!
+[02:27] AGENT  : Take care, Asher. We look forward to seeing you tomorrow.
+[02:31] PATIENT: Thank you! I’m looking forward to it too. Bye!
+[02:36] AGENT  : See you soon.
+[02:37] PATIENT: See you!

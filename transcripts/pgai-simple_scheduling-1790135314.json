@@ -1,0 +1,142 @@
+{
+  "call_id": "pgai-simple_scheduling-1790135314",
+  "scenario_id": "simple_scheduling",
+  "started_at": 1790135315.2800164,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 11.37
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?",
+      "t": 17.45
+    },
+    {
+      "role": "patient",
+      "text": "Hi, I\u2019d like to schedule a new-patient appointment. I\u2019ve been experiencing some knee pain that started about a week ago.",
+      "t": 25.59
+    },
+    {
+      "role": "agent",
+      "text": "I see you're calling from the number we have on file. Am I speaking with Asher?",
+      "t": 33.64
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's correct. It's Asher Palle.",
+      "t": 37.88
+    },
+    {
+      "role": "agent",
+      "text": "Please provide your date of birth.",
+      "t": 44.23
+    },
+    {
+      "role": "patient",
+      "text": "My date of birth is February 16, 1995.",
+      "t": 48.88
+    },
+    {
+      "role": "agent",
+      "text": "Just to confirm, you'd like to schedule a new patient consultation for knee pain that's started about a week ago. Is that right?",
+      "t": 61.35
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's right. I\u2019d like to get in as soon as possible.",
+      "t": 66.3
+    },
+    {
+      "role": "agent",
+      "text": "The soonest available appointment is tomorrow. Wednesday, September 23 with Avericker. At Pivot Point Orthopedics.",
+      "t": 81.32
+    },
+    {
+      "role": "agent",
+      "text": "Would you like the 9AM slot? Or do you prefer a later time?",
+      "t": 85.32
+    },
+    {
+      "role": "patient",
+      "text": "I prefer the 9 AM slot, that works for me.",
+      "t": 89.22
+    },
+    {
+      "role": "agent",
+      "text": "You're all set for tomorrow, Wednesday, September 23 at 9AM with Abeker. At Pivot Point Orthopedics.",
+      "t": 98.89
+    },
+    {
+      "role": "agent",
+      "text": "Is there anything else I can help you with?",
+      "t": 100.9
+    },
+    {
+      "role": "patient",
+      "text": "No, that\u2019s everything",
+      "t": 102.86
+    },
+    {
+      "role": "agent",
+      "text": "Your appointment is set",
+      "t": 103.78
+    },
+    {
+      "role": "patient",
+      "text": "Great, thank you! I appreciate your help.",
+      "t": 107.17
+    },
+    {
+      "role": "agent",
+      "text": "You're all set for tomorrow at 9AM with A Bricker at Pivot Point Orthopedics.",
+      "t": 114.41
+    },
+    {
+      "role": "agent",
+      "text": "Please bring your photo ID, insurance card, a list of your medications, and any imaging discs if you have them.",
+      "t": 122.18
+    },
+    {
+      "role": "agent",
+      "text": "Would you like a text message with your appointment details?",
+      "t": 125.25
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that would be helpful. Thank you!",
+      "t": 128.15
+    },
+    {
+      "role": "agent",
+      "text": "You should get a text with your appointment details soon. Have any other questions, just let us know.",
+      "t": 137.54
+    },
+    {
+      "role": "patient",
+      "text": "I will, thanks again for your help! Have a great day!",
+      "t": 141.54
+    },
+    {
+      "role": "agent",
+      "text": "Take care, Asher. We look forward to seeing you tomorrow.",
+      "t": 147.37
+    },
+    {
+      "role": "patient",
+      "text": "Thank you! I\u2019m looking forward to it too. Bye!",
+      "t": 151.28
+    },
+    {
+      "role": "agent",
+      "text": "See you soon.",
+      "t": 156.04
+    },
+    {
+      "role": "patient",
+      "text": "See you!",
+      "t": 157.53
+    }
+  ]
+}
