@@ -52,22 +52,30 @@ RECORDINGS_DIR = Path(__file__).resolve().parent.parent / "recordings"
 RECORDINGS_DIR.mkdir(exist_ok=True)
 
 
-async def _record_track_to_wav(track: rtc.Track, out_path: Path, stop_event: asyncio.Event):
-    """Tap raw PCM frames off a track (local or remote) and write them to a
-    mono WAV file until stop_event is set. Used for both the SIP
-    participant's incoming audio and our own agent's synthesized speech, so
-    the final call recording has both sides."""
-    stream = rtc.AudioStream(track)
+async def _record_track_to_wav(track: rtc.Track, out_path: Path, stop_event: asyncio.Event, t0: float):
+    """Tap raw PCM frames off a track and write them to a mono WAV file until
+    stop_event is set. Silence is inserted whenever frames arrive later than
+    real time (e.g. our TTS track only carries audio while the bot speaks),
+    so both WAVs stay on the same timeline starting at t0 and line up when
+    mixed into one MP3."""
+    stream = rtc.AudioStream(track, sample_rate=24000, num_channels=1)
     wav_file = None
+    written = 0  # samples written so far
     try:
         async for event in stream:
             frame = event.frame
             if wav_file is None:
                 wav_file = wave.open(str(out_path), "wb")
-                wav_file.setnchannels(frame.num_channels)
+                wav_file.setnchannels(1)
                 wav_file.setsampwidth(2)  # 16-bit PCM
                 wav_file.setframerate(frame.sample_rate)
+            expected = int((time.time() - t0) * frame.sample_rate) - frame.samples_per_channel
+            gap = expected - written
+            if gap > frame.sample_rate // 10:  # more than 100 ms behind: pad with silence
+                wav_file.writeframes(b"\x00\x00" * gap)
+                written += gap
             wav_file.writeframes(frame.data.tobytes())
+            written += frame.samples_per_channel
             if stop_event.is_set():
                 break
     except Exception:
@@ -95,9 +103,51 @@ async def entrypoint(ctx: JobContext):
     log.info("Job started: room=%s scenario=%s", call_id, scenario_id)
 
     stop_recording = asyncio.Event()
+    t0 = time.time()  # shared timeline origin for both recordings
     recording_tasks: list[asyncio.Task] = []
     agent_wav = RECORDINGS_DIR / f"{call_id}_agent.wav"
     patient_wav = RECORDINGS_DIR / f"{call_id}_patient.wav"
+
+    finalized = False
+
+    async def finalize(*_):
+        """Stop recording, save the transcript, and mix both sides into one
+        MP3. Safe to call more than once."""
+        nonlocal finalized
+        if finalized:
+            return
+        finalized = True
+        stop_recording.set()
+        for t in recording_tasks:
+            try:
+                await asyncio.wait_for(t, timeout=5)
+            except BaseException:
+                t.cancel()
+        json_path, txt_path = transcript.save()
+        log.info("Transcript saved: %s (%d turns)", txt_path, len(transcript.turns))
+
+        wavs = [w for w in (agent_wav, patient_wav) if w.exists()]
+        if not wavs:
+            log.error("No audio was recorded for room %s", call_id)
+            return
+        out_mp3 = RECORDINGS_DIR / f"{call_id}.mp3"
+        args = ["ffmpeg", "-y"]
+        for w in wavs:
+            args += ["-i", str(w)]
+        if len(wavs) == 2:
+            args += ["-filter_complex", "amix=inputs=2:duration=longest:normalize=0"]
+        args += ["-c:a", "libmp3lame", "-q:a", "4", str(out_mp3)]
+        proc = await asyncio.create_subprocess_exec(
+            *args, stdout=asyncio.subprocess.DEVNULL, stderr=asyncio.subprocess.DEVNULL)
+        await proc.wait()
+        if proc.returncode == 0 and out_mp3.exists():
+            for w in wavs:
+                w.unlink(missing_ok=True)
+            log.info("Recording saved: %s (%d side(s))", out_mp3, len(wavs))
+        else:
+            log.error("ffmpeg mixdown failed, keeping raw WAVs for room %s", call_id)
+
+    ctx.add_shutdown_callback(finalize)
 
     @ctx.room.on("track_subscribed")
     def on_track_subscribed(track: rtc.Track, publication, participant: rtc.RemoteParticipant):
@@ -105,7 +155,7 @@ async def entrypoint(ctx: JobContext):
         # audio track once the call connects; record it as the "agent" side.
         if track.kind == rtc.TrackKind.KIND_AUDIO:
             recording_tasks.append(
-                asyncio.create_task(_record_track_to_wav(track, agent_wav, stop_recording))
+                asyncio.create_task(_record_track_to_wav(track, agent_wav, stop_recording, t0))
             )
 
     @ctx.room.on("local_track_published")
@@ -113,7 +163,7 @@ async def entrypoint(ctx: JobContext):
         # Our own TTS output track ("patient" side of the call).
         if track.kind == rtc.TrackKind.KIND_AUDIO:
             recording_tasks.append(
-                asyncio.create_task(_record_track_to_wav(track, patient_wav, stop_recording))
+                asyncio.create_task(_record_track_to_wav(track, patient_wav, stop_recording, t0))
             )
 
     # --- Step 1: dial out and wait for the clinic's line to answer. ---
@@ -127,8 +177,11 @@ async def entrypoint(ctx: JobContext):
         if "sip.callStatus" in changed:
             log.info("SIP call status: %s", changed["sip.callStatus"])
 
+    callee_left = asyncio.Event()
+
     @ctx.room.on("participant_disconnected")
     def on_participant_disconnected(participant: rtc.RemoteParticipant):
+        callee_left.set()
         log.info("Participant left room %s: %s (reason: %s)",
                  ctx.room.name, participant.identity, getattr(participant, "disconnect_reason", "?"))
 
@@ -152,7 +205,7 @@ async def entrypoint(ctx: JobContext):
     except asyncio.TimeoutError:
         log.error("Step 1 FAILED: call not answered within 60s")
         await lkapi.aclose()
-        transcript.save()
+        await finalize()
         return
     except Exception as e:
         # A rejected/busy/unanswered call raises a TwirpError carrying the SIP
@@ -161,7 +214,7 @@ async def entrypoint(ctx: JobContext):
         log.error("Step 1 FAILED: %s: %s (sip status %s %s)", type(e).__name__,
                   getattr(e, "message", e), meta.get("sip_status_code"), meta.get("sip_status"))
         await lkapi.aclose()
-        transcript.save()
+        await finalize()
         return
     await lkapi.aclose()
 
@@ -191,48 +244,19 @@ async def entrypoint(ctx: JobContext):
         await asyncio.wait_for(session.start(agent=agent, room=ctx.room), timeout=30)
     except BaseException as e:  # includes CancelledError, so a hang can't exit silently
         log.error("Step 2 FAILED: session.start() did not complete (%s: %s)", type(e).__name__, e)
-        transcript.save()
+        await finalize()
         raise
     log.info("Step 2 done: pipeline running, conversation in progress")
 
-    # Let the scenario play out naturally; the patient persona in
-    # scenarios.py is instructed to close the call itself once its goal is
-    # resolved. As a safety net, cap any single call at 4 minutes.
-    started = time.time()
-    while time.time() - started < 240:
-        if ctx.room.connection_state != rtc.ConnectionState.CONN_CONNECTED:
-            break
-        await asyncio.sleep(1)
-
-    stop_recording.set()
-    for t in recording_tasks:
-        try:
-            await asyncio.wait_for(t, timeout=5)
-        except Exception:
-            pass
-
-    json_path, txt_path = transcript.save()
-    log.info("Transcript saved: %s", txt_path)
-
-    # Mix the two mono WAVs (agent + patient) down to a single MP3 so the
-    # deliverable is one file per call with both sides, per the assignment.
-    if agent_wav.exists() and patient_wav.exists():
-        out_mp3 = RECORDINGS_DIR / f"{call_id}.mp3"
-        proc = await asyncio.create_subprocess_exec(
-            "ffmpeg", "-y",
-            "-i", str(agent_wav), "-i", str(patient_wav),
-            "-filter_complex", "amix=inputs=2:duration=longest:normalize=0",
-            "-c:a", "libmp3lame", "-q:a", "4",
-            str(out_mp3),
-            stdout=asyncio.subprocess.DEVNULL, stderr=asyncio.subprocess.DEVNULL,
-        )
-        await proc.wait()
-        if out_mp3.exists():
-            agent_wav.unlink(missing_ok=True)
-            patient_wav.unlink(missing_ok=True)
-            log.info("Recording saved: %s", out_mp3)
-        else:
-            log.error("ffmpeg mixdown failed, keeping raw WAVs for room %s", call_id)
+    # Wait for the call to end: the clinic hangs up (normal end of a
+    # conversation) or a 4-minute safety cap is reached.
+    try:
+        await asyncio.wait_for(callee_left.wait(), timeout=240)
+        log.info("Call ended (clinic hung up)")
+    except asyncio.TimeoutError:
+        log.info("Call hit the 4-minute cap, ending it")
+    await finalize()
+    ctx.shutdown(reason="call finished")
 
 
 if __name__ == "__main__":
