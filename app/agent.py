@@ -101,7 +101,7 @@ async def entrypoint(ctx: JobContext):
                 asyncio.create_task(_record_track_to_wav(track, agent_wav, stop_recording))
             )
 
-    @ctx.room.local_participant.on("local_track_published")
+    @ctx.room.on("local_track_published")
     def on_local_track_published(publication, track: rtc.Track):
         # Our own TTS output track ("patient" side of the call).
         if track.kind == rtc.TrackKind.KIND_AUDIO:
@@ -133,26 +133,66 @@ async def entrypoint(ctx: JobContext):
     # Dial the real phone number into this room via our LiveKit outbound SIP
     # trunk (itself backed by the Twilio Elastic SIP Trunk configured for
     # this project). This is the actual "place the call" step.
+    #
+    # We deliberately do NOT use wait_until_answered=True here: in testing,
+    # that made the whole request hang indefinitely with zero calls ever
+    # showing up in LiveKit's own Telephony > Calls log (i.e. the hang was
+    # before the SIP INVITE was even sent, not a slow answer). Instead we
+    # fire the request without waiting, then watch for the callee's
+    # participant to actually join the room ourselves, with our own timeout.
+    callee_joined = asyncio.Event()
+
+    @ctx.room.on("participant_connected")
+    def on_participant_connected(participant: rtc.RemoteParticipant):
+        log.info("Participant joined room %s: %s", ctx.room.name, participant.identity)
+        callee_joined.set()
+
     lkapi = api.LiveKitAPI(url=LIVEKIT_URL, api_key=LIVEKIT_API_KEY, api_secret=LIVEKIT_API_SECRET)
     try:
-        await lkapi.sip.create_sip_participant(
-            api.CreateSIPParticipantRequest(
-                sip_trunk_id=SIP_TRUNK_ID,
-                sip_call_to=TARGET_NUMBER,
-                room_name=ctx.room.name,
-                participant_identity="pivot-point-agent",
-                participant_name="Pivot Point Orthopedics Agent",
-                wait_until_answered=True,
-            )
+        await asyncio.wait_for(
+            lkapi.sip.create_sip_participant(
+                api.CreateSIPParticipantRequest(
+                    sip_trunk_id=SIP_TRUNK_ID,
+                    sip_call_to=TARGET_NUMBER,
+                    room_name=ctx.room.name,
+                    participant_identity="pivot-point-agent",
+                    participant_name="Pivot Point Orthopedics Agent",
+                    wait_until_answered=False,
+                )
+            ),
+            timeout=20,
         )
-        log.info("SIP call answered for room %s", ctx.room.name)
-    except Exception:
-        log.exception("Failed to place SIP call for room %s", ctx.room.name)
+        log.info("SIP participant request accepted for room %s, waiting for answer", ctx.room.name)
+    except asyncio.TimeoutError:
+        log.error(
+            "create_sip_participant request itself did not return within 20s for "
+            "room %s -- this points at a client/API-level issue, not a slow phone "
+            "answer (check Telephony > Calls in the LiveKit dashboard: 0 calls "
+            "there means the SIP INVITE was never even sent)",
+            ctx.room.name,
+        )
         await lkapi.aclose()
         transcript.save()
         return
-    finally:
+    except Exception:
+        log.exception("Failed to request SIP call for room %s", ctx.room.name)
         await lkapi.aclose()
+        transcript.save()
+        return
+    await lkapi.aclose()
+
+    try:
+        await asyncio.wait_for(callee_joined.wait(), timeout=45)
+        log.info("SIP call answered for room %s", ctx.room.name)
+    except asyncio.TimeoutError:
+        log.error(
+            "No one joined room %s within 45s of the SIP request being accepted "
+            "(check Telephony > Calls in the LiveKit dashboard for the call's "
+            "actual status/error code)",
+            ctx.room.name,
+        )
+        transcript.save()
+        return
 
     # Let the scenario play out naturally; the patient persona in
     # scenarios.py is instructed to close the call itself once its goal is
