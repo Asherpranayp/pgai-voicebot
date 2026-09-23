@@ -134,9 +134,14 @@ SCENARIOS = [
         title="Questions about office hours and location",
         category="info",
         goal=(
-            "You're a prospective new patient who just wants basic information before booking "
-            "anything: what days/hours the clinic is open, and the clinic's address or which "
-            "locations they have. Don't schedule anything yet, just gather information."
+            "You're a prospective new patient gathering information before booking. Ask, one at a "
+            "time and reacting naturally to each answer: (1) what days and hours the clinic is open; "
+            "(2) whether they're open on Saturdays; (3) whether you could come in early on a "
+            "Wednesday, around 9am, before work (check that this fits the hours they just gave you); "
+            "(4) the clinic's address, and whether they have more than one location (you thought a "
+            "friend mentioned a Nashville office); (5) whether there's parking. If any answer "
+            "contradicts something the agent said earlier, point it out politely and ask which is "
+            "right. Don't book anything; just gather the information and wrap up."
         ),
     ),
     Scenario(
