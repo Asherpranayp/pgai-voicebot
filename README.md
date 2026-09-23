@@ -12,7 +12,9 @@ no realtime/speech-to-speech model), per the assessment's stack requirement. See
 
 Requirements: Python 3.10+, `ffmpeg` on your PATH (for mixing the call recording),
 a [LiveKit Cloud](https://cloud.livekit.io) project, a Twilio account with a
-Voice-capable number, and an OpenAI API key.
+Voice-capable number, an OpenAI API key, and (recommended) a Deepgram API key for
+low-latency streaming speech-to-text and text-to-speech. Without the Deepgram key the
+bot falls back to OpenAI Whisper and tts-1, which works but adds about a second per reply.
 
 ```bash
 git clone <this-repo>
@@ -50,32 +52,26 @@ python -m app.create_sip_trunk
 This prints a trunk id (`ST_xxxxxxxxxxxx`) — copy it into `.env` as `SIP_TRUNK_ID`.
 It's a one-time step; only re-run it if you want to recreate the trunk from scratch.
 
-## Running a call
-
-Start the agent worker once (it stays running and waits for dispatched jobs), then
-dispatch calls against it:
-
-**Terminal 1** — start the worker (leave this running):
+## Running calls (one command)
 
 ```bash
-python -m app.agent start
+python -m app.run_calls                                  # every scenario, one after another
+python -m app.run_calls simple_scheduling insurance_question   # or just the ones you name
 ```
 
-**Terminal 2** — dispatch a call for a given scenario:
+This starts the agent worker, places each call, waits for it to finish and for its files to
+be saved, then stops the worker. For each call you get:
 
-```bash
-python -m app.dispatch_call --list          # see all scenario ids
-python -m app.dispatch_call simple_scheduling
-```
+- `recordings/<call>.mp3`: both sides of the call, mixed into one file
+- `transcripts/<call>.txt` / `.json`: a timestamped transcript of both sides
+- `transcripts/<call>.latency.json`: our bot's per-turn response latency
 
-The bot places the call, holds the conversation, and once it ends (or after a 4
-minute safety cap) you'll find:
+`python -m app.dispatch_call --list` lists the scenario ids. To run the worker and
+dispatch calls separately instead, use `python -m app.agent start` in one terminal and
+`python -m app.dispatch_call <scenario>` in another.
 
-- `recordings/<room_name>.mp3` — the full call audio, both sides mixed down
-- `transcripts/<room_name>.txt` / `.json` — a timestamped transcript of both sides
-
-Calls run 1-3 minutes each — watch Terminal 1's logs and wait for one to finish
-before dispatching the next.
+I ran all the calls from a Google Colab notebook, with Colab Secrets in place of `.env`,
+using the same modules cell by cell. Nothing in the code depends on Colab.
 
 ## Generating the bug report
 
@@ -86,11 +82,9 @@ python -m bug_analysis.analyze
 ```
 
 This reads every transcript in `transcripts/`, runs an LLM pass looking for concrete
-issues (wrong information, unhandled edge cases, ignored requests, etc.), and writes
-`bug_report/bug_report.md`. Treat this as a first draft — skim it against the actual
-transcripts/recordings and add anything the automated pass missed or drop anything
-that's a nitpick, since the challenge explicitly favors a few well-described real bugs
-over a long list of noise.
+issues and writes a first draft to `bug_report/auto_draft.md`. The final
+`bug_report/bug_report.md` is hand-written from that draft after checking each finding
+against the recordings (LLM review isn't deterministic and can't hear the audio).
 
 ## Project layout
 
@@ -102,12 +96,13 @@ app/
                          transcript capture, dual-track recording + mixdown
   create_sip_trunk.py   one-time script: creates the LiveKit outbound SIP trunk
   dispatch_call.py      CLI to dispatch one outbound call to the running worker
+  run_calls.py          one command: start worker, run scenarios in sequence, stop worker
   transcript_store.py   accumulates + saves a call's transcript
 bug_analysis/
-  analyze.py             offline LLM pass over transcripts -> bug_report.md
+  analyze.py             offline LLM pass over transcripts -> auto_draft.md
 recordings/              call audio (.mp3), one per call
 transcripts/             call transcripts (.txt + .json), one per call
-bug_report/              bug_report.md
+bug_report/              bug_report.md (final, hand-verified)
 ```
 
 ## Environment variables

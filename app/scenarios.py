@@ -1,8 +1,8 @@
 """
 Scenario definitions for the patient simulator.
 
-Each scenario is a system prompt that turns the OpenAI Realtime model into a
-believable patient calling Pivot Point Orthopedics. The prompt gives the model
+Each scenario is a system prompt that turns the pipeline's LLM (gpt-4o-mini) into
+a believable patient calling Pivot Point Orthopedics. The prompt gives the model
 a goal, a personality, and known facts (name/DOB) but deliberately leaves room
 for it to react naturally to whatever the agent actually says, rather than
 following a fixed script. This is what keeps the call from sounding like a

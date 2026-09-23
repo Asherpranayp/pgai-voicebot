@@ -1,7 +1,11 @@
 """
 Post-call analysis pass: reads every transcript in transcripts/, asks an LLM
 (a plain chat-completions call, not Realtime) to flag concrete bugs or quality
-issues in the AGENT's responses, and writes a consolidated bug_report/bug_report.md.
+issues in the AGENT's responses, and writes a first-pass draft to bug_report/auto_draft.md.
+
+The draft is only a starting point: LLM review of transcripts is not deterministic
+and can't hear the audio, so the final bug_report/bug_report.md is written by hand
+after checking each finding against the recording.
 
 This is a separate, offline pass rather than something the patient bot does
 live on the call, on purpose: judging response quality benefits from seeing
@@ -121,7 +125,7 @@ def main():
             lines.append("")
         lines.append("")
 
-    report_path = BUG_REPORT_DIR / "bug_report.md"
+    report_path = BUG_REPORT_DIR / "auto_draft.md"
     report_path.write_text("\n".join(lines))
     print(f"\nWrote {report_path} ({total_issues} total issue(s) across all calls)")
 
