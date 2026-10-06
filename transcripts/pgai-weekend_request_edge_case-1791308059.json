@@ -1,0 +1,82 @@
+{
+  "call_id": "pgai-weekend_request_edge_case-1791308059",
+  "scenario_id": "weekend_request_edge_case",
+  "started_at": 1791308060.6623828,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 11.73
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics.",
+      "t": 14.52
+    },
+    {
+      "role": "agent",
+      "text": "Part of pretty good AI.",
+      "t": 17.52
+    },
+    {
+      "role": "agent",
+      "text": "How may I help you today?",
+      "t": 18.9
+    },
+    {
+      "role": "patient",
+      "text": "Hi, I\u2019m Asher Pranay Palle. I\u2019ve been having some knee pain, and I\u2019d like to come in this Sunday at 10 AM. Is that possible?",
+      "t": 28.46
+    },
+    {
+      "role": "agent",
+      "text": "Can you please provide your date of birth?",
+      "t": 33.91
+    },
+    {
+      "role": "patient",
+      "text": "Sure, it's February 16, 1995.",
+      "t": 38.68
+    },
+    {
+      "role": "agent",
+      "text": "Just to confirm, I have your name as Asher Pranay Palle? And your date of birth as February sixteenth nineteen ninety five. Could you please spell your first and last name for me?",
+      "t": 60.15
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's correct. It's A-S-H-E-R, P-R-A-N-A-Y, P-A-L-L-E.",
+      "t": 68.54
+    },
+    {
+      "role": "agent",
+      "text": "Would you like me to look up your record using your phone number? If so, please provide the number you have on file with us. If you're not sure, I can confirm your name and date of birth again. Which would you prefer?",
+      "t": 85.84
+    },
+    {
+      "role": "patient",
+      "text": "You can look up my record using my phone number. It\u2019s 920-551-5133.",
+      "t": 93.94
+    },
+    {
+      "role": "agent",
+      "text": "I have your phone number as nine two zero five five one five one three three and your date of birth as 02/16/1995. Is that correct?",
+      "t": 112.66
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's correct.",
+      "t": 115.23
+    },
+    {
+      "role": "agent",
+      "text": "I'm unable to find your record in our system. I'll connect you to our patient support team so they can assist you further. Please stay on the line. Transferring you now. Thank you.",
+      "t": 130.04
+    },
+    {
+      "role": "agent",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye.",
+      "t": 135.41
+    }
+  ]
+}

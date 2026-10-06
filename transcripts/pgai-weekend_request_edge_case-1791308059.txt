@@ -1,0 +1,17 @@
+Call: pgai-weekend_request_edge_case-1791308059  Scenario: weekend_request_edge_case
+
+[00:11] AGENT  : This call may be recorded for quality and training purposes.
+[00:14] AGENT  : Thanks for calling Pivot Point Orthopedics.
+[00:17] AGENT  : Part of pretty good AI.
+[00:18] AGENT  : How may I help you today?
+[00:28] PATIENT: Hi, I’m Asher Pranay Palle. I’ve been having some knee pain, and I’d like to come in this Sunday at 10 AM. Is that possible?
+[00:33] AGENT  : Can you please provide your date of birth?
+[00:38] PATIENT: Sure, it's February 16, 1995.
+[01:00] AGENT  : Just to confirm, I have your name as Asher Pranay Palle? And your date of birth as February sixteenth nineteen ninety five. Could you please spell your first and last name for me?
+[01:08] PATIENT: Yes, that's correct. It's A-S-H-E-R, P-R-A-N-A-Y, P-A-L-L-E.
+[01:25] AGENT  : Would you like me to look up your record using your phone number? If so, please provide the number you have on file with us. If you're not sure, I can confirm your name and date of birth again. Which would you prefer?
+[01:33] PATIENT: You can look up my record using my phone number. It’s 920-551-5133.
+[01:52] AGENT  : I have your phone number as nine two zero five five one five one three three and your date of birth as 02/16/1995. Is that correct?
+[01:55] PATIENT: Yes, that's correct.
+[02:10] AGENT  : I'm unable to find your record in our system. I'll connect you to our patient support team so they can assist you further. Please stay on the line. Transferring you now. Thank you.
+[02:15] AGENT  : Hello. You've reached the Pretty Good AI test line. Goodbye.

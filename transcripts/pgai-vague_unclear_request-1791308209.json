@@ -1,0 +1,167 @@
+{
+  "call_id": "pgai-vague_unclear_request-1791308209",
+  "scenario_id": "vague_unclear_request",
+  "started_at": 1791308209.7990978,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "This call may be recorded for quality and training purposes.",
+      "t": 11.7
+    },
+    {
+      "role": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI? How may I help you today?",
+      "t": 17.65
+    },
+    {
+      "role": "patient",
+      "text": "Yeah, hi, I\u2019m having some issues and wanted to see about coming in.",
+      "t": 23.32
+    },
+    {
+      "role": "agent",
+      "text": "See, you're calling from the number we have on file. Am I speaking with Asher?",
+      "t": 30.64
+    },
+    {
+      "role": "patient",
+      "text": "Yes, that's right.",
+      "t": 33.31
+    },
+    {
+      "role": "agent",
+      "text": "Please provide your date of birth.",
+      "t": 38.19
+    },
+    {
+      "role": "patient",
+      "text": "Sure, it's February 16, 1995.",
+      "t": 42.4
+    },
+    {
+      "role": "agent",
+      "text": "The birthday doesn't match our records, but for demo purposes, I'll accept it.",
+      "t": 50.35
+    },
+    {
+      "role": "patient",
+      "text": "Um, can",
+      "t": 51.44
+    },
+    {
+      "role": "agent",
+      "text": "What kind of issue are you having, and do you have",
+      "t": 52.66
+    },
+    {
+      "role": "patient",
+      "text": "I'm not sure how to describe it, but I've been having some pain lately and I think I might need to come in for an evaluation.",
+      "t": 60.57
+    },
+    {
+      "role": "agent",
+      "text": "Would you say this pain is urgent and needs prompt attention or is it more of a routine concern? This helps me pick the right type of visit for you.",
+      "t": 73.1
+    },
+    {
+      "role": "patient",
+      "text": "Um, it's more of a routine concern, but I definitely want to get it checked out.",
+      "t": 79.05
+    },
+    {
+      "role": "agent",
+      "text": "Do you have a specific provider you'd like to see, or are you open to the next available?",
+      "t": 87.28
+    },
+    {
+      "role": "patient",
+      "text": "I\u2019m open to the next available provider.",
+      "t": 90.79
+    },
+    {
+      "role": "agent",
+      "text": "Let me check for the next available appointment for a route pain evaluation. One moment.",
+      "t": 100.08
+    },
+    {
+      "role": "patient",
+      "text": "Sure, no problem.",
+      "t": 101.84
+    },
+    {
+      "role": "agent",
+      "text": "There are several",
+      "t": 102.45
+    },
+    {
+      "role": "patient",
+      "text": "Sorry, could you repeat that? It got a bit garbled.",
+      "t": 106.14
+    },
+    {
+      "role": "agent",
+      "text": "No problem. We have several openings on Wednesday, October 7 with the big new Lekosky, MD and Kelly Noble, MD Do you have a preference between these two providers, or should I offer the earliest available time?",
+      "t": 122.38
+    },
+    {
+      "role": "patient",
+      "text": "I'll go with the earliest available time, please.",
+      "t": 125.96
+    },
+    {
+      "role": "agent",
+      "text": "The earliest slot is Wednesday, October 7 at 9AM. With Zed Vigniew Likoski, MD. Would you like to book this appointment?",
+      "t": 137.65
+    },
+    {
+      "role": "patient",
+      "text": "Just to clarify, is that 9 AM on October 7 with Lekosky, MD? If so, yes, let\u2019s book that appointment.",
+      "t": 147.93
+    },
+    {
+      "role": "agent",
+      "text": "Your appointment is set for Wednesday, October 7 at 9AM with z Bignew Lakoski, MD at Pivot Point Orthopedics.",
+      "t": 165.87
+    },
+    {
+      "role": "agent",
+      "text": "Please bring your photo ID insurance card, a list of your current medications, and any imaging discs you have. Would you like me to send you a text message with these appointment details?",
+      "t": 177.14
+    },
+    {
+      "role": "patient",
+      "text": "Yes, please send me a text with the details. That would be really helpful.",
+      "t": 182.1
+    },
+    {
+      "role": "agent",
+      "text": "You should get a text with your appointment details soon. Is there anything else I can help you with today?",
+      "t": 191.25
+    },
+    {
+      "role": "patient",
+      "text": "No, that's everything for now. Thanks for your help!",
+      "t": 195.19
+    },
+    {
+      "role": "agent",
+      "text": "All set.",
+      "t": 199.78
+    },
+    {
+      "role": "agent",
+      "text": "Have a great day.",
+      "t": 201.23
+    },
+    {
+      "role": "patient",
+      "text": "Great, thank you!",
+      "t": 201.27
+    },
+    {
+      "role": "patient",
+      "text": "You too, thanks! Goodbye!",
+      "t": 203.97
+    }
+  ]
+}
