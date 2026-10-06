@@ -40,3 +40,5 @@ AGENT_NAME = os.getenv("AGENT_NAME", "pgai-voicebot-agent")
 
 PATIENT_NAME = os.getenv("PATIENT_NAME", "Asher Pranay Palle")
 PATIENT_DOB = os.getenv("PATIENT_DOB", "1995-02-16")
+# The number the bot calls from, which the clinic has on file for this patient.
+PATIENT_PHONE = os.getenv("PATIENT_PHONE", "920-551-5133")
